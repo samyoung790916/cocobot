@@ -1,14 +1,14 @@
 //
-//  ViewController.swift
+//  SlideViewController.swift
 //  cocobot
 //
-//  Created by samyoung79 on 08/01/2019.
+//  Created by samyoung79 on 03/01/2019.
 //  Copyright © 2019 samyoung79. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class SlideViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

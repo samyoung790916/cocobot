@@ -1,0 +1,35 @@
+<head>
+    <meta charset="utf-8">
+        <script src="https://cdn.jsdelivr.net/npm/eosjs-ecc@4.0.3/lib/eosjs-ecc.min.js" integrity="sha512-XWIwj+P5ClTipsRsO+yz0U8z4Zp9RmGTlJT9+BrgngPFLitzJnaVaNi4Q7nkbHs2W+WeZp0S9EBhZ8KbBC8Yyg=="
+            crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="./jsbn.js"></script>
+        <script src="./jsbn2.js"></script>
+        <script src="./base58.js"></script>
+        <script src="./eos.js"></script>
+        <script>
+        //메인서버
+        var eos = Eos({
+                      httpEndpoint: 'https://api1.eosasia.one',
+                      chainId: 'aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906',
+                      debug: true
+                      });
+                      
+        function call_register() {
+            makeKey();
+        }
+
+        function call_log(get_id) {
+            getCurrency(get_id)
+        }
+        
+        window.webkit.messageHandlers.finish.postMessage("{}");
+        </script>
+</head>
+<!--//테스트 서버-->
+<!--var eos = Eos({-->
+<!--httpEndpoint: 'https://api-kylin.eosasia.one',-->
+ <!--chainId: '5fff1dae8dc8e2fc4d5b23b2c7665c97f9e9d8edf2b6485a86ba311c25639191',-->
+<!--keyProvider: "5K3zRRtGKmgb5orUSE3udF3BDy784Tdtn2vLdv9dt4SZp713Hnm",-->
+<!--debug: true-->
+<!--})-->

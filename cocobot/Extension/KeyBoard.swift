@@ -1,14 +1,14 @@
 //
-//  ViewController.swift
+//  KeyBoard.swift
 //  cocobot
 //
-//  Created by samyoung79 on 08/01/2019.
+//  Created by samyoung79 on 15/01/2019.
 //  Copyright © 2019 samyoung79. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class KeyBoard: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
