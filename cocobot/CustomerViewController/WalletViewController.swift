@@ -12,6 +12,8 @@ class WalletViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "내 지갑"
+       
 
         // Do any additional setup after loading the view.
     }

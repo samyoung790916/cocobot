@@ -114,15 +114,8 @@ class LoginViewController: UIViewController {
             "USER_PW" : self.passwordTextField.text?.base64()
         ]
         
-//        self.indicator.isHidden = false
-//        self.indicator.startAnimating()
-        
         APIService.shared.post(url: "login", string: array.json()) { (result, resultDict) in
-        
-//            self.indicator.stopAnimating()
-//            self.indicator.isHidden = true
-            
-            
+    
             if result == .success{
                 UserDefaults.standard.set(resultDict["userRole"], forKey: "userRole")
                 

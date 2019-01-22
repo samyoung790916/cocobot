@@ -8,20 +8,93 @@
 
 /* Begin PBXBuildFile section */
 		4A26DFB621DC70BB002C09BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A26DFB521DC70BB002C09BD /* AppDelegate.swift */; };
-		4A26DFB821DC70BB002C09BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A26DFB721DC70BB002C09BD /* ViewController.swift */; };
 		4A26DFBB21DC70BB002C09BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A26DFB921DC70BB002C09BD /* Main.storyboard */; };
 		4A26DFBD21DC70BD002C09BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A26DFBC21DC70BD002C09BD /* Assets.xcassets */; };
 		4A26DFC021DC70BD002C09BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A26DFBE21DC70BD002C09BD /* LaunchScreen.storyboard */; };
+		4A26DFDA21DC90DC002C09BD /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A26DFD921DC90DC002C09BD /* APIService.swift */; };
+		4A34A73521F555AC00F966C4 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A34A73421F555AC00F966C4 /* RegisterViewController.swift */; };
+		4A34A75521F6FB6400F966C4 /* ValidationMgr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A34A75421F6FB6400F966C4 /* ValidationMgr.swift */; };
+		4A34A75821F7102900F966C4 /* BridgeMgr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A34A75721F7102900F966C4 /* BridgeMgr.swift */; };
+		4A3F6F7221ED744F00C70250 /* KeyBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F6F7121ED744F00C70250 /* KeyBoard.swift */; };
+		4A3F6F7621ED761900C70250 /* AJAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F6F7421ED761900C70250 /* AJAlertController.swift */; };
+		4A3F6F7721ED761900C70250 /* AJAlertController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A3F6F7521ED761900C70250 /* AJAlertController.xib */; };
+		4A3F6F7E21EECAC200C70250 /* BannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F6F7C21EECAC200C70250 /* BannerCell.swift */; };
+		4A3F6F7F21EECAC200C70250 /* BannerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A3F6F7D21EECAC200C70250 /* BannerCell.xib */; };
+		4A3F6F8921EECB7800C70250 /* TADotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F6F8321EECB7800C70250 /* TADotView.m */; };
+		4A3F6F8A21EECB7800C70250 /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F6F8421EECB7800C70250 /* TAAbstractDotView.m */; };
+		4A3F6F8B21EECB7800C70250 /* TAAnimatedDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F6F8521EECB7800C70250 /* TAAnimatedDotView.m */; };
+		4A3F6F8C21EECB7800C70250 /* TAPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F6F8821EECB7800C70250 /* TAPageControl.m */; };
+		4A51BFD421F068D30031ABFB /* base58.js in Resources */ = {isa = PBXBuildFile; fileRef = 4A51BFCF21F068D30031ABFB /* base58.js */; };
+		4A51BFD521F068D30031ABFB /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 4A51BFD021F068D30031ABFB /* index.html */; };
+		4A51BFD621F068D30031ABFB /* eos.js in Resources */ = {isa = PBXBuildFile; fileRef = 4A51BFD121F068D30031ABFB /* eos.js */; };
+		4A51BFD721F068D30031ABFB /* jsbn.js in Resources */ = {isa = PBXBuildFile; fileRef = 4A51BFD221F068D30031ABFB /* jsbn.js */; };
+		4A51BFD821F068D30031ABFB /* jsbn2.js in Resources */ = {isa = PBXBuildFile; fileRef = 4A51BFD321F068D30031ABFB /* jsbn2.js */; };
+		4A51BFDA21F06DBF0031ABFB /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A51BFD921F06DBF0031ABFB /* JoinViewController.swift */; };
+		4A51BFDC21F082D70031ABFB /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A51BFDB21F082D70031ABFB /* WalletViewController.swift */; };
+		4A51BFDE21F083110031ABFB /* FranchiseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A51BFDD21F083110031ABFB /* FranchiseViewController.swift */; };
+		4A51BFE021F0834B0031ABFB /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A51BFDF21F0834B0031ABFB /* EventViewController.swift */; };
+		4A51BFE221F083770031ABFB /* FriendRecommendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A51BFE121F083770031ABFB /* FriendRecommendViewController.swift */; };
+		4A83977C21E4432C007A8A58 /* SubCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A83977A21E4432C007A8A58 /* SubCell.swift */; };
+		4A83977D21E4432C007A8A58 /* SubCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A83977B21E4432C007A8A58 /* SubCell.xib */; };
+		4A83977F21E46355007A8A58 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A83977E21E46355007A8A58 /* LoginViewController.swift */; };
+		4A8397A521E493B6007A8A58 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8397A421E493B6007A8A58 /* ViewController.swift */; };
+		4A8397A921E5C044007A8A58 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8397A821E5C044007A8A58 /* UIColor.swift */; };
+		4A8397AB21E6D2C8007A8A58 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8397AA21E6D2C8007A8A58 /* UIFont.swift */; };
+		4ADE7C6621DDC81300E035E3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE7C6521DDC81300E035E3 /* MainViewController.swift */; };
+		4ADE7C6821DDC96B00E035E3 /* SlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE7C6721DDC96B00E035E3 /* SlideViewController.swift */; };
+		4ADE7C7621DDEBE600E035E3 /* MainMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE7C7421DDEBE600E035E3 /* MainMenuCell.swift */; };
+		4ADE7C7721DDEBE600E035E3 /* MainMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4ADE7C7521DDEBE600E035E3 /* MainMenuCell.xib */; };
+		66A8E138B720D5A49DA021DB /* Pods_cocobot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F3F2E1ABDE34E2AAD9ACD2 /* Pods_cocobot.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		19CA1FACE1AA439862699C88 /* Pods-cocobot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cocobot.release.xcconfig"; path = "Pods/Target Support Files/Pods-cocobot/Pods-cocobot.release.xcconfig"; sourceTree = "<group>"; };
+		19F3F2E1ABDE34E2AAD9ACD2 /* Pods_cocobot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cocobot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		32CBBCCF3E986480B6BE4B34 /* Pods-cocobot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cocobot.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cocobot/Pods-cocobot.debug.xcconfig"; sourceTree = "<group>"; };
 		4A26DFB221DC70BB002C09BD /* cocobot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cocobot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A26DFB521DC70BB002C09BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4A26DFB721DC70BB002C09BD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4A26DFBA21DC70BB002C09BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4A26DFBC21DC70BD002C09BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A26DFBF21DC70BD002C09BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4A26DFC121DC70BD002C09BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A26DFD221DC72A0002C09BD /* cocobot-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "cocobot-Bridging-Header.h"; sourceTree = "<group>"; };
+		4A26DFD921DC90DC002C09BD /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		4A34A73421F555AC00F966C4 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		4A34A75421F6FB6400F966C4 /* ValidationMgr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationMgr.swift; sourceTree = "<group>"; };
+		4A34A75721F7102900F966C4 /* BridgeMgr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgeMgr.swift; sourceTree = "<group>"; };
+		4A3F6F7121ED744F00C70250 /* KeyBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyBoard.swift; sourceTree = "<group>"; };
+		4A3F6F7421ED761900C70250 /* AJAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AJAlertController.swift; sourceTree = "<group>"; };
+		4A3F6F7521ED761900C70250 /* AJAlertController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AJAlertController.xib; sourceTree = "<group>"; };
+		4A3F6F7C21EECAC200C70250 /* BannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCell.swift; sourceTree = "<group>"; };
+		4A3F6F7D21EECAC200C70250 /* BannerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BannerCell.xib; sourceTree = "<group>"; };
+		4A3F6F8121EECB7800C70250 /* TAAnimatedDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAnimatedDotView.h; sourceTree = "<group>"; };
+		4A3F6F8221EECB7800C70250 /* TADotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TADotView.h; sourceTree = "<group>"; };
+		4A3F6F8321EECB7800C70250 /* TADotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TADotView.m; sourceTree = "<group>"; };
+		4A3F6F8421EECB7800C70250 /* TAAbstractDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAbstractDotView.m; sourceTree = "<group>"; };
+		4A3F6F8521EECB7800C70250 /* TAAnimatedDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAnimatedDotView.m; sourceTree = "<group>"; };
+		4A3F6F8621EECB7800C70250 /* TAAbstractDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAbstractDotView.h; sourceTree = "<group>"; };
+		4A3F6F8721EECB7800C70250 /* TAPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAPageControl.h; sourceTree = "<group>"; };
+		4A3F6F8821EECB7800C70250 /* TAPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAPageControl.m; sourceTree = "<group>"; };
+		4A51BFCF21F068D30031ABFB /* base58.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = base58.js; sourceTree = "<group>"; };
+		4A51BFD021F068D30031ABFB /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		4A51BFD121F068D30031ABFB /* eos.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = eos.js; sourceTree = "<group>"; };
+		4A51BFD221F068D30031ABFB /* jsbn.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jsbn.js; sourceTree = "<group>"; };
+		4A51BFD321F068D30031ABFB /* jsbn2.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jsbn2.js; sourceTree = "<group>"; };
+		4A51BFD921F06DBF0031ABFB /* JoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
+		4A51BFDB21F082D70031ABFB /* WalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
+		4A51BFDD21F083110031ABFB /* FranchiseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FranchiseViewController.swift; sourceTree = "<group>"; };
+		4A51BFDF21F0834B0031ABFB /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
+		4A51BFE121F083770031ABFB /* FriendRecommendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendRecommendViewController.swift; sourceTree = "<group>"; };
+		4A83977A21E4432C007A8A58 /* SubCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCell.swift; sourceTree = "<group>"; };
+		4A83977B21E4432C007A8A58 /* SubCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubCell.xib; sourceTree = "<group>"; };
+		4A83977E21E46355007A8A58 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		4A8397A421E493B6007A8A58 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4A8397A821E5C044007A8A58 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		4A8397AA21E6D2C8007A8A58 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
+		4ADE7C6521DDC81300E035E3 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		4ADE7C6721DDC96B00E035E3 /* SlideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideViewController.swift; sourceTree = "<group>"; };
+		4ADE7C7421DDEBE600E035E3 /* MainMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuCell.swift; sourceTree = "<group>"; };
+		4ADE7C7521DDEBE600E035E3 /* MainMenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenuCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +102,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66A8E138B720D5A49DA021DB /* Pods_cocobot.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C5A1A3F453ED52A76C60515 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				19F3F2E1ABDE34E2AAD9ACD2 /* Pods_cocobot.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4A26DFA921DC70BB002C09BD = {
 			isa = PBXGroup;
 			children = (
 				4A26DFB421DC70BB002C09BD /* cocobot */,
 				4A26DFB321DC70BB002C09BD /* Products */,
+				A6396EA718E610B79EDC441E /* Pods */,
+				0C5A1A3F453ED52A76C60515 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +138,140 @@
 		4A26DFB421DC70BB002C09BD /* cocobot */ = {
 			isa = PBXGroup;
 			children = (
+				4A34A75621F70FAD00F966C4 /* Tool */,
+				4A51BFE721F084BA0031ABFB /* Common */,
+				4A51BFE521F083ED0031ABFB /* Service */,
+				4A51BFE421F083D10031ABFB /* StoreViewController */,
+				4A51BFE321F083880031ABFB /* CustomerViewController */,
+				4A51BFCE21F068920031ABFB /* Local Data */,
+				4A3F6F8021EECB6500C70250 /* TAPageControl */,
+				4A3F6F7321ED760900C70250 /* Alert */,
+				4A8397A721E5C008007A8A58 /* Extension */,
+				4ADE7C6921DDD83700E035E3 /* TableViewCell */,
 				4A26DFB521DC70BB002C09BD /* AppDelegate.swift */,
-				4A26DFB721DC70BB002C09BD /* ViewController.swift */,
 				4A26DFB921DC70BB002C09BD /* Main.storyboard */,
 				4A26DFBC21DC70BD002C09BD /* Assets.xcassets */,
 				4A26DFBE21DC70BD002C09BD /* LaunchScreen.storyboard */,
 				4A26DFC121DC70BD002C09BD /* Info.plist */,
+				4A26DFD221DC72A0002C09BD /* cocobot-Bridging-Header.h */,
+				4A8397A421E493B6007A8A58 /* ViewController.swift */,
 			);
 			path = cocobot;
+			sourceTree = "<group>";
+		};
+		4A34A75621F70FAD00F966C4 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				4A34A75421F6FB6400F966C4 /* ValidationMgr.swift */,
+				4A34A75721F7102900F966C4 /* BridgeMgr.swift */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		4A3F6F7321ED760900C70250 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				4A3F6F7421ED761900C70250 /* AJAlertController.swift */,
+				4A3F6F7521ED761900C70250 /* AJAlertController.xib */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
+		4A3F6F8021EECB6500C70250 /* TAPageControl */ = {
+			isa = PBXGroup;
+			children = (
+				4A3F6F8621EECB7800C70250 /* TAAbstractDotView.h */,
+				4A3F6F8421EECB7800C70250 /* TAAbstractDotView.m */,
+				4A3F6F8121EECB7800C70250 /* TAAnimatedDotView.h */,
+				4A3F6F8521EECB7800C70250 /* TAAnimatedDotView.m */,
+				4A3F6F8221EECB7800C70250 /* TADotView.h */,
+				4A3F6F8321EECB7800C70250 /* TADotView.m */,
+				4A3F6F8721EECB7800C70250 /* TAPageControl.h */,
+				4A3F6F8821EECB7800C70250 /* TAPageControl.m */,
+			);
+			path = TAPageControl;
+			sourceTree = "<group>";
+		};
+		4A51BFCE21F068920031ABFB /* Local Data */ = {
+			isa = PBXGroup;
+			children = (
+				4A51BFCF21F068D30031ABFB /* base58.js */,
+				4A51BFD121F068D30031ABFB /* eos.js */,
+				4A51BFD021F068D30031ABFB /* index.html */,
+				4A51BFD221F068D30031ABFB /* jsbn.js */,
+				4A51BFD321F068D30031ABFB /* jsbn2.js */,
+			);
+			path = "Local Data";
+			sourceTree = "<group>";
+		};
+		4A51BFE321F083880031ABFB /* CustomerViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4A51BFD921F06DBF0031ABFB /* JoinViewController.swift */,
+				4A51BFDB21F082D70031ABFB /* WalletViewController.swift */,
+				4A51BFDD21F083110031ABFB /* FranchiseViewController.swift */,
+				4A51BFDF21F0834B0031ABFB /* EventViewController.swift */,
+				4A51BFE121F083770031ABFB /* FriendRecommendViewController.swift */,
+				4A34A73421F555AC00F966C4 /* RegisterViewController.swift */,
+			);
+			path = CustomerViewController;
+			sourceTree = "<group>";
+		};
+		4A51BFE421F083D10031ABFB /* StoreViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = StoreViewController;
+			sourceTree = "<group>";
+		};
+		4A51BFE521F083ED0031ABFB /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				4A26DFD921DC90DC002C09BD /* APIService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		4A51BFE721F084BA0031ABFB /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				4ADE7C6521DDC81300E035E3 /* MainViewController.swift */,
+				4ADE7C6721DDC96B00E035E3 /* SlideViewController.swift */,
+				4A83977E21E46355007A8A58 /* LoginViewController.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		4A8397A721E5C008007A8A58 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				4A8397A821E5C044007A8A58 /* UIColor.swift */,
+				4A8397AA21E6D2C8007A8A58 /* UIFont.swift */,
+				4A3F6F7121ED744F00C70250 /* KeyBoard.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		4ADE7C6921DDD83700E035E3 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				4ADE7C7421DDEBE600E035E3 /* MainMenuCell.swift */,
+				4ADE7C7521DDEBE600E035E3 /* MainMenuCell.xib */,
+				4A83977A21E4432C007A8A58 /* SubCell.swift */,
+				4A83977B21E4432C007A8A58 /* SubCell.xib */,
+				4A3F6F7C21EECAC200C70250 /* BannerCell.swift */,
+				4A3F6F7D21EECAC200C70250 /* BannerCell.xib */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		A6396EA718E610B79EDC441E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				32CBBCCF3E986480B6BE4B34 /* Pods-cocobot.debug.xcconfig */,
+				19CA1FACE1AA439862699C88 /* Pods-cocobot.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +281,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4A26DFC421DC70BD002C09BD /* Build configuration list for PBXNativeTarget "cocobot" */;
 			buildPhases = (
+				8056CF39194EEC975F2BAE62 /* [CP] Check Pods Manifest.lock */,
 				4A26DFAE21DC70BB002C09BD /* Sources */,
 				4A26DFAF21DC70BB002C09BD /* Frameworks */,
 				4A26DFB021DC70BB002C09BD /* Resources */,
+				382E143CCB4644B55B915F8D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -96,6 +308,7 @@
 				TargetAttributes = {
 					4A26DFB121DC70BB002C09BD = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -122,21 +335,110 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A51BFD621F068D30031ABFB /* eos.js in Resources */,
 				4A26DFC021DC70BD002C09BD /* LaunchScreen.storyboard in Resources */,
+				4A51BFD821F068D30031ABFB /* jsbn2.js in Resources */,
+				4A3F6F7721ED761900C70250 /* AJAlertController.xib in Resources */,
+				4A51BFD721F068D30031ABFB /* jsbn.js in Resources */,
 				4A26DFBD21DC70BD002C09BD /* Assets.xcassets in Resources */,
+				4A51BFD521F068D30031ABFB /* index.html in Resources */,
+				4A3F6F7F21EECAC200C70250 /* BannerCell.xib in Resources */,
+				4A51BFD421F068D30031ABFB /* base58.js in Resources */,
 				4A26DFBB21DC70BB002C09BD /* Main.storyboard in Resources */,
+				4ADE7C7721DDEBE600E035E3 /* MainMenuCell.xib in Resources */,
+				4A83977D21E4432C007A8A58 /* SubCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		382E143CCB4644B55B915F8D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-cocobot/Pods-cocobot-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/AnimatedTextInput/AnimatedTextInput.framework",
+				"${BUILT_PRODUCTS_DIR}/FullMaterialLoader/FullMaterialLoader.framework",
+				"${BUILT_PRODUCTS_DIR}/KYDrawerController/KYDrawerController.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AnimatedTextInput.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FullMaterialLoader.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KYDrawerController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-cocobot/Pods-cocobot-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8056CF39194EEC975F2BAE62 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-cocobot-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4A26DFAE21DC70BB002C09BD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A26DFB821DC70BB002C09BD /* ViewController.swift in Sources */,
+				4A83977F21E46355007A8A58 /* LoginViewController.swift in Sources */,
+				4A3F6F8A21EECB7800C70250 /* TAAbstractDotView.m in Sources */,
+				4A51BFE021F0834B0031ABFB /* EventViewController.swift in Sources */,
+				4A51BFDE21F083110031ABFB /* FranchiseViewController.swift in Sources */,
+				4A3F6F8921EECB7800C70250 /* TADotView.m in Sources */,
+				4A3F6F7621ED761900C70250 /* AJAlertController.swift in Sources */,
+				4A51BFDA21F06DBF0031ABFB /* JoinViewController.swift in Sources */,
+				4A34A75521F6FB6400F966C4 /* ValidationMgr.swift in Sources */,
+				4A51BFDC21F082D70031ABFB /* WalletViewController.swift in Sources */,
+				4A26DFDA21DC90DC002C09BD /* APIService.swift in Sources */,
+				4A3F6F7E21EECAC200C70250 /* BannerCell.swift in Sources */,
+				4ADE7C6821DDC96B00E035E3 /* SlideViewController.swift in Sources */,
 				4A26DFB621DC70BB002C09BD /* AppDelegate.swift in Sources */,
+				4A3F6F8B21EECB7800C70250 /* TAAnimatedDotView.m in Sources */,
+				4A3F6F7221ED744F00C70250 /* KeyBoard.swift in Sources */,
+				4A34A73521F555AC00F966C4 /* RegisterViewController.swift in Sources */,
+				4A8397A921E5C044007A8A58 /* UIColor.swift in Sources */,
+				4A3F6F8C21EECB7800C70250 /* TAPageControl.m in Sources */,
+				4ADE7C6621DDC81300E035E3 /* MainViewController.swift in Sources */,
+				4A83977C21E4432C007A8A58 /* SubCell.swift in Sources */,
+				4A34A75821F7102900F966C4 /* BridgeMgr.swift in Sources */,
+				4A8397A521E493B6007A8A58 /* ViewController.swift in Sources */,
+				4A8397AB21E6D2C8007A8A58 /* UIFont.swift in Sources */,
+				4ADE7C7621DDEBE600E035E3 /* MainMenuCell.swift in Sources */,
+				4A51BFE221F083770031ABFB /* FriendRecommendViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,8 +515,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -268,7 +570,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -280,8 +582,10 @@
 		};
 		4A26DFC521DC70BD002C09BD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32CBBCCF3E986480B6BE4B34 /* Pods-cocobot.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V5S6RTDPXU;
 				INFOPLIST_FILE = cocobot/Info.plist;
@@ -291,6 +595,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.cocobot.kr.cocobot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "cocobot/cocobot-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -298,8 +604,10 @@
 		};
 		4A26DFC621DC70BD002C09BD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 19CA1FACE1AA439862699C88 /* Pods-cocobot.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V5S6RTDPXU;
 				INFOPLIST_FILE = cocobot/Info.plist;
@@ -309,6 +617,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.cocobot.kr.cocobot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "cocobot/cocobot-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

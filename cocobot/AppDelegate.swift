@@ -7,15 +7,29 @@
 //
 
 import UIKit
+import KYDrawerController
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var drawController = KYDrawerController(drawerDirection: .left, drawerWidth: 300)
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let storyboard = UIStoryboard.init(name: "Main", bundle: Bundle.main)
+        
+        let mainView = storyboard.instantiateViewController(withIdentifier: "MainView")
+        let slideView = storyboard.instantiateViewController(withIdentifier: "SlideView")
+
+        self.drawController.mainViewController = UINavigationController(rootViewController: mainView)
+        self.drawController.drawerViewController = slideView
+//
+        self.window?.rootViewController = self.drawController
+        self.window?.makeKeyAndVisible()
+        
         return true
     }
 
@@ -40,6 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
 
 
 }

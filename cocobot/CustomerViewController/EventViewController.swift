@@ -12,6 +12,8 @@ class EventViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+          self.navigationItem.title = "이벤트 및 공지사항"
 
         // Do any additional setup after loading the view.
     }

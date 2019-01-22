@@ -12,6 +12,8 @@ class FranchiseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.title = "가맹점 찾기 및 메뉴 주문"
 
         // Do any additional setup after loading the view.
     }

@@ -12,6 +12,7 @@ class FriendRecommendViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+           self.navigationItem.title = "친구추천"
 
         // Do any additional setup after loading the view.
     }

@@ -1,21 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="HelveticaNeue.ttc">
-            <string>HelveticaNeue</string>
-            <string>HelveticaNeue-Medium</string>
-        </array>
-    </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AJAlertController" customModule="AJAlertController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AJAlertController" customModule="cocobot" customModuleProvider="target">
             <connections>
                 <outlet property="alertWidthConstraint" destination="0Aj-LF-FO5" id="B0p-Eg-TK6"/>
                 <outlet property="btnCancel" destination="fM5-6n-9SW" id="I27-EQ-p92"/>
@@ -80,13 +74,13 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WmD-re-Md6">
-                                    <rect key="frame" x="1.5" y="1" width="277.5" height="45"/>
+                                    <rect key="frame" x="1" y="1" width="278" height="45"/>
                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="45" id="cvO-5p-6de"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
-                                    <state key="normal" title="OK"/>
+                                    <state key="normal" title="확인"/>
                                     <connections>
                                         <action selector="btnOkTappedWithSender:" destination="-1" eventType="touchUpInside" id="Vif-gz-9B6"/>
                                     </connections>

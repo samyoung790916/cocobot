@@ -92,8 +92,20 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         tableView.deselectRow(at: indexPath, animated: true)
-        performSegue(withIdentifier: "LoginShow", sender: self)
+        
+        if indexPath.row == 0{
+            return
+        }else if indexPath.row == 1{
+            performSegue(withIdentifier: "WalletSegue", sender: self)
+        }else if indexPath.row == 2{
+            performSegue(withIdentifier: "FranchiseSegue", sender: self)
+        }else if indexPath.row == 3{
+            performSegue(withIdentifier: "EventSegue", sender: self)
+        }else if indexPath.row == 4{
+            performSegue(withIdentifier: "FriendSegue", sender: self)
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
