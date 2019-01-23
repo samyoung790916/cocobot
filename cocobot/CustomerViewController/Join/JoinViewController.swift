@@ -181,7 +181,7 @@ class JoinViewController: UIViewController {
     @objc func facebook_join_action(_ sender : UIButton) {
     }
     @objc func tel_join_action(_ sender : UIButton) {
-         performSegue(withIdentifier: "RegiShow", sender: self)
+         performSegue(withIdentifier: "Identi_verification_segue", sender: self)
     }
 
     

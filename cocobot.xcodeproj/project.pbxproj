@@ -34,6 +34,7 @@
 		4A51BFDE21F083110031ABFB /* FranchiseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A51BFDD21F083110031ABFB /* FranchiseViewController.swift */; };
 		4A51BFE021F0834B0031ABFB /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A51BFDF21F0834B0031ABFB /* EventViewController.swift */; };
 		4A51BFE221F083770031ABFB /* FriendRecommendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A51BFE121F083770031ABFB /* FriendRecommendViewController.swift */; };
+		4A673A6F21F83A1700492810 /* Identy_verification_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A673A6E21F83A1700492810 /* Identy_verification_ViewController.swift */; };
 		4A83977C21E4432C007A8A58 /* SubCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A83977A21E4432C007A8A58 /* SubCell.swift */; };
 		4A83977D21E4432C007A8A58 /* SubCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A83977B21E4432C007A8A58 /* SubCell.xib */; };
 		4A83977F21E46355007A8A58 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A83977E21E46355007A8A58 /* LoginViewController.swift */; };
@@ -85,6 +86,7 @@
 		4A51BFDD21F083110031ABFB /* FranchiseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FranchiseViewController.swift; sourceTree = "<group>"; };
 		4A51BFDF21F0834B0031ABFB /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		4A51BFE121F083770031ABFB /* FriendRecommendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendRecommendViewController.swift; sourceTree = "<group>"; };
+		4A673A6E21F83A1700492810 /* Identy_verification_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identy_verification_ViewController.swift; sourceTree = "<group>"; };
 		4A83977A21E4432C007A8A58 /* SubCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCell.swift; sourceTree = "<group>"; };
 		4A83977B21E4432C007A8A58 /* SubCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubCell.xib; sourceTree = "<group>"; };
 		4A83977E21E46355007A8A58 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -207,12 +209,11 @@
 		4A51BFE321F083880031ABFB /* CustomerViewController */ = {
 			isa = PBXGroup;
 			children = (
-				4A51BFD921F06DBF0031ABFB /* JoinViewController.swift */,
+				4A673A6D21F839C600492810 /* Join */,
 				4A51BFDB21F082D70031ABFB /* WalletViewController.swift */,
 				4A51BFDD21F083110031ABFB /* FranchiseViewController.swift */,
 				4A51BFDF21F0834B0031ABFB /* EventViewController.swift */,
 				4A51BFE121F083770031ABFB /* FriendRecommendViewController.swift */,
-				4A34A73421F555AC00F966C4 /* RegisterViewController.swift */,
 			);
 			path = CustomerViewController;
 			sourceTree = "<group>";
@@ -240,6 +241,16 @@
 				4A83977E21E46355007A8A58 /* LoginViewController.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		4A673A6D21F839C600492810 /* Join */ = {
+			isa = PBXGroup;
+			children = (
+				4A51BFD921F06DBF0031ABFB /* JoinViewController.swift */,
+				4A34A73421F555AC00F966C4 /* RegisterViewController.swift */,
+				4A673A6E21F83A1700492810 /* Identy_verification_ViewController.swift */,
+			);
+			path = Join;
 			sourceTree = "<group>";
 		};
 		4A8397A721E5C008007A8A58 /* Extension */ = {
@@ -426,6 +437,7 @@
 				4A26DFDA21DC90DC002C09BD /* APIService.swift in Sources */,
 				4A3F6F7E21EECAC200C70250 /* BannerCell.swift in Sources */,
 				4ADE7C6821DDC96B00E035E3 /* SlideViewController.swift in Sources */,
+				4A673A6F21F83A1700492810 /* Identy_verification_ViewController.swift in Sources */,
 				4A26DFB621DC70BB002C09BD /* AppDelegate.swift in Sources */,
 				4A3F6F8B21EECB7800C70250 /* TAAnimatedDotView.m in Sources */,
 				4A3F6F7221ED744F00C70250 /* KeyBoard.swift in Sources */,
