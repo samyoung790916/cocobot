@@ -175,9 +175,9 @@ class RegisterViewController: UIViewController,AnimatedTextInputDelegate{
         var array = [
             "USER_ROLE" : "1",
             "USER_PW" : self.pwCheckField.text?.base64() as Any,
-            "USER_NAME" : self.nameTextField.text,
-            "USER_TEL" : self.phoneNumber?.replace(of: "-", with: "").base64(),
-            "USER_COINID": (self.walletInfoDict["key"] as! String)
+            "USER_NAME" : self.nameTextField.text as Any,
+            "USER_TEL" : self.phoneNumber?.replace(of: "-", with: "").base64() as Any,
+            "USER_COINID": self.walletInfoDict["key"] as Any
         ] as [String : Any]
         
         if recTextField.text != ""{
@@ -203,7 +203,7 @@ class RegisterViewController: UIViewController,AnimatedTextInputDelegate{
         if segue.identifier == "ModalSegue"{
             if let destinationVC = segue.destination as? JoinCompleteViewController {
                 destinationVC.phoneNumber = self.phoneNumber?.replace(of: "-", with: "").base64()
-                destinationVC.privatekey = (self.walletInfoDict["key"] as! String)
+                destinationVC.privatekey = self.walletInfoDict["key"]
             }
         }
         

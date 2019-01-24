@@ -88,16 +88,6 @@ class JoinCompleteViewController: UIViewController {
                     
                     RegisterViewController.bHome = true
                     self.dismiss(animated: false, completion:nil)
-                    
-                    
-
-                    
-                    //self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
-
-//
-//                        self.navigationController?.popToRootViewController(animated: true)
-//                    })
-                    
                 }
             }
         }
