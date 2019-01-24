@@ -41,6 +41,8 @@
 		4A8397A521E493B6007A8A58 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8397A421E493B6007A8A58 /* ViewController.swift */; };
 		4A8397A921E5C044007A8A58 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8397A821E5C044007A8A58 /* UIColor.swift */; };
 		4A8397AB21E6D2C8007A8A58 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8397AA21E6D2C8007A8A58 /* UIFont.swift */; };
+		4A9B0E4721F9496700182B81 /* JoinCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9B0E4621F9496700182B81 /* JoinCompleteViewController.swift */; };
+		4A9B0E4921F9882900182B81 /* NotoSansCJKkr-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4A9B0E4821F987F300182B81 /* NotoSansCJKkr-Regular.otf */; };
 		4ADE7C6621DDC81300E035E3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE7C6521DDC81300E035E3 /* MainViewController.swift */; };
 		4ADE7C6821DDC96B00E035E3 /* SlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE7C6721DDC96B00E035E3 /* SlideViewController.swift */; };
 		4ADE7C7621DDEBE600E035E3 /* MainMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE7C7421DDEBE600E035E3 /* MainMenuCell.swift */; };
@@ -93,6 +95,8 @@
 		4A8397A421E493B6007A8A58 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4A8397A821E5C044007A8A58 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		4A8397AA21E6D2C8007A8A58 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
+		4A9B0E4621F9496700182B81 /* JoinCompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinCompleteViewController.swift; sourceTree = "<group>"; };
+		4A9B0E4821F987F300182B81 /* NotoSansCJKkr-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Regular.otf"; sourceTree = "<group>"; };
 		4ADE7C6521DDC81300E035E3 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		4ADE7C6721DDC96B00E035E3 /* SlideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideViewController.swift; sourceTree = "<group>"; };
 		4ADE7C7421DDEBE600E035E3 /* MainMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuCell.swift; sourceTree = "<group>"; };
@@ -155,6 +159,7 @@
 				4A26DFBC21DC70BD002C09BD /* Assets.xcassets */,
 				4A26DFBE21DC70BD002C09BD /* LaunchScreen.storyboard */,
 				4A26DFC121DC70BD002C09BD /* Info.plist */,
+				4A9B0E4821F987F300182B81 /* NotoSansCJKkr-Regular.otf */,
 				4A26DFD221DC72A0002C09BD /* cocobot-Bridging-Header.h */,
 				4A8397A421E493B6007A8A58 /* ViewController.swift */,
 			);
@@ -249,6 +254,7 @@
 				4A51BFD921F06DBF0031ABFB /* JoinViewController.swift */,
 				4A34A73421F555AC00F966C4 /* RegisterViewController.swift */,
 				4A673A6E21F83A1700492810 /* Identy_verification_ViewController.swift */,
+				4A9B0E4621F9496700182B81 /* JoinCompleteViewController.swift */,
 			);
 			path = Join;
 			sourceTree = "<group>";
@@ -352,6 +358,7 @@
 				4A3F6F7721ED761900C70250 /* AJAlertController.xib in Resources */,
 				4A51BFD721F068D30031ABFB /* jsbn.js in Resources */,
 				4A26DFBD21DC70BD002C09BD /* Assets.xcassets in Resources */,
+				4A9B0E4921F9882900182B81 /* NotoSansCJKkr-Regular.otf in Resources */,
 				4A51BFD521F068D30031ABFB /* index.html in Resources */,
 				4A3F6F7F21EECAC200C70250 /* BannerCell.xib in Resources */,
 				4A51BFD421F068D30031ABFB /* base58.js in Resources */,
@@ -433,6 +440,7 @@
 				4A3F6F7621ED761900C70250 /* AJAlertController.swift in Sources */,
 				4A51BFDA21F06DBF0031ABFB /* JoinViewController.swift in Sources */,
 				4A34A75521F6FB6400F966C4 /* ValidationMgr.swift in Sources */,
+				4A9B0E4721F9496700182B81 /* JoinCompleteViewController.swift in Sources */,
 				4A51BFDC21F082D70031ABFB /* WalletViewController.swift in Sources */,
 				4A26DFDA21DC90DC002C09BD /* APIService.swift in Sources */,
 				4A3F6F7E21EECAC200C70250 /* BannerCell.swift in Sources */,

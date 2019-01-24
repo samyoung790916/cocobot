@@ -115,9 +115,9 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "MainCell", for: indexPath) as! MainMenuCell
                 cell.selectionStyle = UITableViewCell.SelectionStyle.none
                 
-                let main_string = "CoCo의 회원에 가입하시면 블록체인 암호화폐인\n 커피 코인을 드립니다."
-                let range = (main_string as NSString).range(of: "CoCo")
-                let font = UIFont(name:"Apple Color Emoji" , size: 20)
+                let main_string = "COCO의 회원에 가입하시면 블록체인 암호화폐인 커피 코인을 드립니다."
+                let range = (main_string as NSString).range(of: "COCO")
+                let font = UIFont(name:"NotoSansCJKkr-Regular" , size: 18)
                 let attribute = NSMutableAttributedString.init(string: main_string)
                 
                 attribute.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.red, range: range)
@@ -125,7 +125,15 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
                 
                 cell.MainLabel.attributedText = attribute
                 cell.MainLabel.numberOfLines  = 0
-                cell.SubLabel.text = "-> 커피코인 획득: 회원가입, 친구 추천, 매장추천, 잭팟 등\n-> 커피코인 활용: 코인 거래소 상장 후 현금화"
+                
+                let screenRect : CGRect = UIScreen.main.bounds
+                
+                if screenRect.size.width == 320.0{
+                    cell.SubLabel.font = UIFont(name:"NotoSansCJKkr-Regular" , size: 12)
+                }
+                
+                cell.SubLabel.numberOfLines = 0
+                cell.SubLabel.text = "☕️ 커피코인 획득: 회원가입, 친구 추천, 매장추천, 잭팟 등\n☕️ 커피코인 활용: 코인 거래소 상장 후 현금화"
                 
                 cell.LoginBtn.layer.borderColor = UIColor.black.cgColor
                 cell.LoginBtn.layer.cornerRadius = 15.0
@@ -177,6 +185,12 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
             let cell = tableView.dequeueReusableCell(withIdentifier: "SubCell", for: indexPath) as! SubCell
             cell.selectionStyle = UITableViewCell.SelectionStyle.none
             cell.separatorInset =  UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
+            
+            let screenRect : CGRect = UIScreen.main.bounds
+            
+            if screenRect.size.width == 320.0{
+                cell.SubTitle.font = UIFont(name:"NotoSansCJKkr-Regular" , size: 11)
+            }
             
             if indexPath.row == 1{
                 cell.TitleImage.image = UIImage(named: "wallet_btn")

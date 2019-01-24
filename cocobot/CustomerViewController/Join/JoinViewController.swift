@@ -95,7 +95,7 @@ class JoinViewController: UIViewController {
         
         customer_join_view.snp.makeConstraints { (make) in
             make.centerX.equalTo(contentStackView)
-            make.top.equalTo(logoImage.snp.bottom).offset(80)
+            make.top.equalTo(logoImage.snp.bottom).offset(50)
             make.left.equalTo(contentStackView).offset(30)
             make.right.equalTo(contentStackView).offset(-30)
             make.height.equalTo(150)
@@ -132,6 +132,7 @@ class JoinViewController: UIViewController {
         
         customer_label.text = "개인용 회원가입"
         customer_label.textAlignment = .center
+        customer_label.font = UIFont(name:"NotoSansCJKkr-Regular" , size: 17)
         
         store_label.snp.makeConstraints { (make) in
             make.centerX.equalTo(store_join_view)
@@ -141,6 +142,7 @@ class JoinViewController: UIViewController {
             make.height.equalTo(20)
         }
         store_label.text = "매장용 회원가입"
+        store_label.font = UIFont(name:"NotoSansCJKkr-Regular" , size: 17)
         store_label.textAlignment = .center
         
 
@@ -203,24 +205,24 @@ class JoinViewController: UIViewController {
         
         let titleLabel = UILabel()
         titleLabel.text = "회원가입 방법을 선택하세요"
-        titleLabel.font = UIFont.font(type: .nanumBold, size: 14)
+        titleLabel.font = UIFont(name:"NotoSansCJKkr-Regular" , size: 17)
         titleLabel.textColor = UIColor(hex: "#1a1a1a")
         titleLabel.textAlignment = .center
         
         kakao_join_btn.setTitle("카카오 아이디로 간편가입", for: .normal)
         kakao_join_btn.setTitleColor(UIColor(hex: "#381e1e"), for:.normal)
-        kakao_join_btn.titleLabel?.font = UIFont.font(type: .nanumBold, size: 13)
+        kakao_join_btn.titleLabel?.font = UIFont(name:"NotoSansCJKkr-Regular" , size: 17)
         kakao_join_btn.backgroundColor = UIColor(hex: "#ffe600")
         
         facebook_join_btn.setTitle("페이스북 아이디로 간편가입", for: .normal)
         facebook_join_btn.setTitleColor(UIColor(hex: "#ffffff"), for: .normal)
-        facebook_join_btn.titleLabel?.font = UIFont.font(type: .nanumBold, size: 13)
+        facebook_join_btn.titleLabel?.font = UIFont(name:"NotoSansCJKkr-Regular" , size: 17)
         facebook_join_btn.backgroundColor = UIColor(hex: "#445d97")
         
         
         tel_joinbtn.setTitle("핸드폰 번호로 간편가입", for: .normal)
         tel_joinbtn.setTitleColor(UIColor(hex: "#ffffff"), for: .normal)
-        tel_joinbtn.titleLabel?.font = UIFont.font(type: .nanumBold, size: 13)
+        tel_joinbtn.titleLabel?.font = UIFont(name:"NotoSansCJKkr-Regular" , size: 17)
         tel_joinbtn.backgroundColor = UIColor(hex: "#1a1a1a")
     
         join_shadow_view.addSubview(joinStackView)

@@ -31,12 +31,20 @@ class Identy_verification_ViewController: UIViewController,AnimatedTextInputDele
         super.viewDidLoad()
         self.navigationItem.title = "본인 인증"
         
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black,NSAttributedString.Key.font:  UIFont(name:"NotoSansCJKkr-Regular" , size: 18)!]
+        /*
+         self.navigationController?.navigationBar.titleTextAttributes =
+         [NSAttributedString.Key.foregroundColor: UIColor.red,
+         NSAttributedString.Key.font: UIFont(name: "mplus-1c-regular", size: 21)!]
+ */
+        phoneTextField.font = UIFont(name:"NotoSansCJKkr-Regular" , size: 18)
         phoneTextField.placeHolderText = "핸드폰 번호"
         phoneTextField.type = .numeric
         phoneTextField.style = CustomTextInputStyle()
         phoneTextField.delegate = self
         phoneTextField.tag = 0
         
+        certiTextField.font = UIFont(name:"NotoSansCJKkr-Regular" , size: 18)
         certiTextField.placeHolderText = "인증번호"
         certiTextField.type = .numeric
         certiTextField.style = CustomTextInputStyle()
@@ -47,6 +55,13 @@ class Identy_verification_ViewController: UIViewController,AnimatedTextInputDele
         certBtn.setImage(UIImage(named: "auth_btn"), for: .normal)
         
         // Do any additional setup after loading the view.
+    }
+
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+        
+        self.view.endEditing(true)
+        
     }
 
     @IBAction func CertiRequest(_ sender: UIButton) {

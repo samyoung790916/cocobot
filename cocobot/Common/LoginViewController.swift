@@ -176,6 +176,8 @@ class LoginViewController: UIViewController {
     }
     @objc func joinEvent(_ sender : UIButton) {
         print("joinEvnet")
+         performSegue(withIdentifier: "JoinSegue", sender: self)
+        
     }
     
 }
@@ -187,12 +189,15 @@ extension LoginViewController{
         logoImage.image = UIImage(named: "logo")
         
         phoneLabel.text = "핸드폰 번호"
+        phoneLabel.font = UIFont(name:"NotoSansCJKkr-Regular" , size: 17)
+        
         phoneTextField.keyboardType = .phonePad
         phoneTextField.attributedPlaceholder = NSAttributedString(string: "PHONE NUMBER",
                                                                   attributes: [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 15),
                                                                                NSAttributedString.Key.foregroundColor : UIColor(hex : "#555555")])
         
         passwordLabel.text = "비밀 번호"
+        passwordLabel.font = UIFont(name:"NotoSansCJKkr-Regular" , size: 17)
         passwordTextField.isSecureTextEntry = true
         passwordTextField.attributedPlaceholder = NSAttributedString(string: "PASSWORD",
                                                                      attributes: [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 15),
@@ -202,20 +207,20 @@ extension LoginViewController{
         
         findPwButton.setTitle("비밀번호 찾기", for: .normal)
         findPwButton.setTitleColor(UIColor(hex: "#e4e4e4"), for: .normal)
-        findPwButton.titleLabel?.font = UIFont.font(type: .nanumBold, size: 13)
+        findPwButton.titleLabel?.font =  UIFont(name:"NotoSansCJKkr-Regular" , size: 17)
         
         facebookButton.setImage(UIImage(named: "facebook"), for: .normal)
         kakaoButton.setImage(UIImage(named: "kakao"), for: .normal)
         
         joinButton.setTitle("회원가입", for: .normal)
         joinButton.setTitleColor(UIColor(hex: "#d8f900"), for: .normal)
-        joinButton.titleLabel?.font = UIFont.font(type: .nanumBold, size: 15)
+        joinButton.titleLabel?.font =  UIFont(name:"NotoSansCJKkr-Regular" , size: 17)
         
-        snsLoginLabel.font = UIFont.font(type: .nanumBold, size: 13)
+        snsLoginLabel.font =  UIFont(name:"NotoSansCJKkr-Regular" , size: 17)
         snsLoginLabel.textColor = UIColor(hex : "#ffffff")
         snsLoginLabel.text = "SNS로 로그인"
         
-        autoLoginLabel.font = UIFont.font(type: .nanumBold, size: 10)
+        autoLoginLabel.font =  UIFont(name:"NotoSansCJKkr-Regular" , size: 17)
         autoLoginLabel.textColor = UIColor(hex: "#ffffff")
         autoLoginLabel.text = "자동 로그인"
         
@@ -293,7 +298,7 @@ extension LoginViewController{
             make.bottom.equalTo(phoneTextField).offset(17)
             make.leading.equalToSuperview()
             make.width.equalToSuperview()
-            make.height.equalTo(97)
+            make.height.equalTo(70)
         }
         
         phoneLabel.snp.makeConstraints { (make) in
@@ -310,50 +315,49 @@ extension LoginViewController{
         }
         
         pwStackView.snp.makeConstraints { (make) in
-            make.top.equalTo(phoneStackView.snp.bottom).offset(20)
+            make.top.equalTo(phoneStackView.snp.bottom).offset(10)
             make.bottom.equalTo(passwordTextField).offset(17)
             make.leading.equalToSuperview()
             make.width.equalToSuperview()
-            make.height.equalTo(97)
+            make.height.equalTo(70)
         }
         
         passwordLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(pwStackView).offset(20)
+            make.top.equalTo(pwStackView).offset(10)
             make.leading.equalTo(passwordTextField)
             make.width.equalToSuperview().multipliedBy(0.93)
             make.height.equalTo(15)
         }
         
         passwordTextField.snp.makeConstraints { (make) in
-            make.top.equalTo(passwordLabel.snp.bottom).offset(20)
-            make.bottom.equalTo(pwStackView)
+            make.top.equalTo(passwordLabel.snp.bottom).offset(7)
             make.leading.equalTo(passwordLabel)
             make.width.equalToSuperview().multipliedBy(0.85)
         }
         
         loginButton.snp.makeConstraints { (make) in
-            make.top.equalTo(contentStackView).offset(350)
-            make.width.equalToSuperview()
-            make.left.equalToSuperview()
+            make.top.equalTo(pwStackView.snp.bottom).offset(20)
+            make.left.equalToSuperview().offset(10)
+            make.right.equalToSuperview().offset(-10)
             make.height.equalToSuperview().multipliedBy(0.1)
         }
         
         findPwButton.snp.makeConstraints { (make) in
-            make.top.equalTo(loginButton.snp.bottom).offset(5)
+            make.top.equalTo(loginButton.snp.bottom).offset(10)
             make.right.equalToSuperview().offset(-15)
             make.width.equalTo(100)
             make.height.equalToSuperview().multipliedBy(0.05)
         }
         
         facebookButton.snp.makeConstraints { (make) in
-            make.top.equalTo(findPwButton.snp.bottom).offset(10)
+            make.top.equalTo(findPwButton.snp.bottom).offset(20)
             make.right.equalToSuperview().offset(-68)
             make.height.equalTo(41)
             make.width.equalTo(41)
         }
         
         kakaoButton.snp.makeConstraints { (make) in
-            make.top.equalTo(findPwButton.snp.bottom).offset(10)
+            make.top.equalTo(findPwButton.snp.bottom).offset(20)
             make.right.equalToSuperview().offset(-20)
             make.height.equalTo(41)
             make.width.equalTo(41)

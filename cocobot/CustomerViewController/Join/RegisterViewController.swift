@@ -20,6 +20,8 @@ class RegisterViewController: UIViewController,AnimatedTextInputDelegate{
     var originY:CGFloat?            // 오브젝트의 기본 위치
     var textFieldtag = 0
     var phoneNumber:String?
+    
+    static var bHome = false
 
 
 
@@ -34,7 +36,11 @@ class RegisterViewController: UIViewController,AnimatedTextInputDelegate{
     @IBOutlet weak var doneBtn: UIButton!
     
     override func viewWillAppear(_ animated: Bool) {
-     //   registerForKeyboardNotifications()
+        
+        if RegisterViewController.bHome == true{
+            RegisterViewController.bHome = false
+            self.navigationController?.popToRootViewController(animated: true)
+        }
     }
 
     override func viewDidLoad() {
@@ -79,10 +85,9 @@ class RegisterViewController: UIViewController,AnimatedTextInputDelegate{
         wkWebView.loadFileURL(htmlUrl, allowingReadAccessTo: htmlUrl)
     }
 
-
     func addBrideges(){
         bridgeManager.addBridge("coinid") {(info) in
-            self.walletInfoDict = info as! [String : String]
+           self.walletInfoDict = info as! [String : String]
         }
 
         bridgeManager.addBridge("finish") { (info) in
@@ -95,6 +100,10 @@ class RegisterViewController: UIViewController,AnimatedTextInputDelegate{
     @objc func screenTapped(sender: UITapGestureRecognizer) {
          self.view.endEditing(true)
 
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+        self.view.endEditing(true)
     }
 
 //    func registerForKeyboardNotifications(){
@@ -135,14 +144,14 @@ class RegisterViewController: UIViewController,AnimatedTextInputDelegate{
 //    }
 
 
-    func animatedTextInputShouldReturn(animatedTextInput: AnimatedTextInput) -> Bool {
-        return true
-    }
-
-    func animatedTextInputShouldBeginEditing(animatedTextInput: AnimatedTextInput) -> Bool {
-        textFieldtag = animatedTextInput.tag
-        return true
-    }
+//    func animatedTextInputShouldReturn(animatedTextInput: AnimatedTextInput) -> Bool {
+//        return true
+//    }
+//
+//    func animatedTextInputShouldBeginEditing(animatedTextInput: AnimatedTextInput) -> Bool {
+//        textFieldtag = animatedTextInput.tag
+//        return true
+//    }
 
 
 
@@ -165,7 +174,7 @@ class RegisterViewController: UIViewController,AnimatedTextInputDelegate{
     func reuquestUserJoin(){
         var array = [
             "USER_ROLE" : "1",
-            "USER_PW" : self.pwCheckField.text?.base64(),
+            "USER_PW" : self.pwCheckField.text?.base64() as Any,
             "USER_NAME" : self.nameTextField.text,
             "USER_TEL" : self.phoneNumber?.replace(of: "-", with: "").base64(),
             "USER_COINID": (self.walletInfoDict["key"] as! String)
@@ -181,13 +190,23 @@ class RegisterViewController: UIViewController,AnimatedTextInputDelegate{
             
             if status_code == 0 || status_code == 1{
                 AJAlertController.initialization().showAlertWithOkButton(aStrMessage: "가입에 성공하였습니다.") { (index, title) in
-                    self.navigationController?.popToRootViewController(animated: true)
-                    
+                    //self.navigationController?.popToRootViewController(animated: true)
+                     self.performSegue(withIdentifier: "ModalSegue", sender: self)
                 }
             }else if status_code == 1000{
                 AJAlertController.initialization().showAlertWithOkButton(aStrMessage: resultDict["message"] as! String) { (index, title) in}
             }
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ModalSegue"{
+            if let destinationVC = segue.destination as? JoinCompleteViewController {
+                destinationVC.phoneNumber = self.phoneNumber?.replace(of: "-", with: "").base64()
+                destinationVC.privatekey = (self.walletInfoDict["key"] as! String)
+            }
+        }
+        
     }
 }
 
