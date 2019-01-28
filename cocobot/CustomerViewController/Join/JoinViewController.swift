@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import FacebookLogin
+import FacebookCore
+import KakaoOpenSDK
 
 class JoinViewController: UIViewController {
     
@@ -178,9 +181,79 @@ class JoinViewController: UIViewController {
     
     @objc func kakako_join_action(_ sender : UIButton) {
         
+        let session :KOSession = KOSession.shared()
+        
+        if session.isOpen() {
+            session.close()
+            
+        }
+        session.presentingViewController = self
+        session.open { (error) in
+            if error == nil
+            {
+                if session.isOpen()
+                {
+                    KOSessionTask.userMeTask(completion: { (error, me) in
+                        if let me = me as KOUserMe?
+                        {
+                            let array = ["USER_ROLE" : "5","USER_SNS" : me.id]
+                            APIService.shared.post(url: "snsjoin/kakao", string: array.json()){[weak self] (result, resultDict) in
+                                if result == .success {
+                                    print("카카오톡 로그인")
+                                    self!.performSegue(withIdentifier: "associateSegue", sender: self)
+                                }
+                                else {
+                                    AJAlertController.initialization().showAlertWithOkButton(aStrMessage: resultDict["message"] as! String) { (index, title) in}
+                                }
+                            }
+                        }
+                    })
+                }else{
+                    print("카카오톡 열기 실패")
+                }
+            }
+        }
     }
     
     @objc func facebook_join_action(_ sender : UIButton) {
+        
+        let loginMgr = LoginManager()
+        loginMgr.logIn(readPermissions:[.publicProfile], viewController: self) { (result) in
+            
+            switch result{
+            case .failed(let error):
+                 AJAlertController.initialization().showAlertWithOkButton(aStrMessage: "페이스북 서버에서 로그인이 실패했습니다.\n에러메세지:\(error.localizedDescription)") { (index, title) in}
+                
+            case .cancelled:
+                print("User canceled login.")
+            case .success(grantedPermissions: let grantedPermission, declinedPermissions: let declinedPermissions, token: let accessToken):
+                print("페이스북 조인 옵션 뷰")
+                print("grantedPermission:", grantedPermission)
+                print("declinedPermissions:", declinedPermissions)
+                
+                
+                if let id = accessToken.userId{
+                    let array = [
+                        "USER_ROLE" : "5",
+                        "USER_SNS" : id
+                    ]
+                    
+                    APIService.shared.post(url: "snsjoin/facebook", string: array.json(), resultCompletion: { (result, resultDict) in
+                        
+                        if result == .success{
+                            print("성공")
+                            self.performSegue(withIdentifier: "associateSegue", sender: self)
+                        }else{
+                            print("실패")
+                        }
+                    })
+                }
+                
+            }
+        }
+        
+        
+        
     }
     @objc func tel_join_action(_ sender : UIButton) {
          performSegue(withIdentifier: "Identi_verification_segue", sender: self)

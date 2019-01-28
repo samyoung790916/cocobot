@@ -43,12 +43,29 @@
 		4A8397AB21E6D2C8007A8A58 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8397AA21E6D2C8007A8A58 /* UIFont.swift */; };
 		4A9B0E4721F9496700182B81 /* JoinCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9B0E4621F9496700182B81 /* JoinCompleteViewController.swift */; };
 		4A9B0E4921F9882900182B81 /* NotoSansCJKkr-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4A9B0E4821F987F300182B81 /* NotoSansCJKkr-Regular.otf */; };
+		4AACDCC321FEE9F400F497AA /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AACDCC221FEE9F300F497AA /* KakaoOpenSDK.framework */; };
+		4AACDCC521FEEBDC00F497AA /* KakaoOpenSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4AACDCC221FEE9F300F497AA /* KakaoOpenSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4AACDCC821FEF79F00F497AA /* JoinAssocicateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AACDCC721FEF79F00F497AA /* JoinAssocicateViewController.swift */; };
 		4ADE7C6621DDC81300E035E3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE7C6521DDC81300E035E3 /* MainViewController.swift */; };
 		4ADE7C6821DDC96B00E035E3 /* SlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE7C6721DDC96B00E035E3 /* SlideViewController.swift */; };
 		4ADE7C7621DDEBE600E035E3 /* MainMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE7C7421DDEBE600E035E3 /* MainMenuCell.swift */; };
 		4ADE7C7721DDEBE600E035E3 /* MainMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4ADE7C7521DDEBE600E035E3 /* MainMenuCell.xib */; };
 		66A8E138B720D5A49DA021DB /* Pods_cocobot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F3F2E1ABDE34E2AAD9ACD2 /* Pods_cocobot.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4AACDCC621FEEBDC00F497AA /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4AACDCC521FEEBDC00F497AA /* KakaoOpenSDK.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		19CA1FACE1AA439862699C88 /* Pods-cocobot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cocobot.release.xcconfig"; path = "Pods/Target Support Files/Pods-cocobot/Pods-cocobot.release.xcconfig"; sourceTree = "<group>"; };
@@ -97,6 +114,8 @@
 		4A8397AA21E6D2C8007A8A58 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		4A9B0E4621F9496700182B81 /* JoinCompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinCompleteViewController.swift; sourceTree = "<group>"; };
 		4A9B0E4821F987F300182B81 /* NotoSansCJKkr-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Regular.otf"; sourceTree = "<group>"; };
+		4AACDCC221FEE9F300F497AA /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoOpenSDK.framework; sourceTree = "<group>"; };
+		4AACDCC721FEF79F00F497AA /* JoinAssocicateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinAssocicateViewController.swift; sourceTree = "<group>"; };
 		4ADE7C6521DDC81300E035E3 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		4ADE7C6721DDC96B00E035E3 /* SlideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideViewController.swift; sourceTree = "<group>"; };
 		4ADE7C7421DDEBE600E035E3 /* MainMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuCell.swift; sourceTree = "<group>"; };
@@ -109,6 +128,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				66A8E138B720D5A49DA021DB /* Pods_cocobot.framework in Frameworks */,
+				4AACDCC321FEE9F400F497AA /* KakaoOpenSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,6 +138,7 @@
 		0C5A1A3F453ED52A76C60515 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4AACDCC221FEE9F300F497AA /* KakaoOpenSDK.framework */,
 				19F3F2E1ABDE34E2AAD9ACD2 /* Pods_cocobot.framework */,
 			);
 			name = Frameworks;
@@ -255,6 +276,7 @@
 				4A34A73421F555AC00F966C4 /* RegisterViewController.swift */,
 				4A673A6E21F83A1700492810 /* Identy_verification_ViewController.swift */,
 				4A9B0E4621F9496700182B81 /* JoinCompleteViewController.swift */,
+				4AACDCC721FEF79F00F497AA /* JoinAssocicateViewController.swift */,
 			);
 			path = Join;
 			sourceTree = "<group>";
@@ -303,6 +325,7 @@
 				4A26DFAF21DC70BB002C09BD /* Frameworks */,
 				4A26DFB021DC70BB002C09BD /* Resources */,
 				382E143CCB4644B55B915F8D /* [CP] Embed Pods Frameworks */,
+				4AACDCC621FEEBDC00F497AA /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -383,6 +406,11 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/AnimatedTextInput/AnimatedTextInput.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
 				"${BUILT_PRODUCTS_DIR}/FullMaterialLoader/FullMaterialLoader.framework",
 				"${BUILT_PRODUCTS_DIR}/KYDrawerController/KYDrawerController.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
@@ -394,6 +422,11 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AnimatedTextInput.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FullMaterialLoader.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KYDrawerController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
@@ -459,6 +492,7 @@
 				4A8397AB21E6D2C8007A8A58 /* UIFont.swift in Sources */,
 				4ADE7C7621DDEBE600E035E3 /* MainMenuCell.swift in Sources */,
 				4A51BFE221F083770031ABFB /* FriendRecommendViewController.swift in Sources */,
+				4AACDCC821FEF79F00F497AA /* JoinAssocicateViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -608,12 +642,42 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V5S6RTDPXU;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = cocobot/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.cocobot.kr.cocobot;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"AlamofireImage\"",
+					"-framework",
+					"\"AnimatedTextInput\"",
+					"-framework",
+					"\"Bolts\"",
+					"-framework",
+					"\"FBSDKCoreKit\"",
+					"-framework",
+					"\"FBSDKLoginKit\"",
+					"-framework",
+					"\"FacebookCore\"",
+					"-framework",
+					"\"FacebookLogin\"",
+					"-framework",
+					"\"FullMaterialLoader\"",
+					"-framework",
+					"\"KYDrawerController\"",
+					"-framework",
+					"\"SnapKit\"",
+					"-all_load",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cocobot.kr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "cocobot/cocobot-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -630,12 +694,42 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V5S6RTDPXU;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = cocobot/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.cocobot.kr.cocobot;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"AlamofireImage\"",
+					"-framework",
+					"\"AnimatedTextInput\"",
+					"-framework",
+					"\"Bolts\"",
+					"-framework",
+					"\"FBSDKCoreKit\"",
+					"-framework",
+					"\"FBSDKLoginKit\"",
+					"-framework",
+					"\"FacebookCore\"",
+					"-framework",
+					"\"FacebookLogin\"",
+					"-framework",
+					"\"FullMaterialLoader\"",
+					"-framework",
+					"\"KYDrawerController\"",
+					"-framework",
+					"\"SnapKit\"",
+					"-all_load",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cocobot.kr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "cocobot/cocobot-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
