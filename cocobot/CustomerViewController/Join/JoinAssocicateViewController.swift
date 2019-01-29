@@ -11,33 +11,45 @@ import UIKit
 class JoinAssocicateViewController: UIViewController {
 
     @IBOutlet weak var JoinCompleteLabel: UILabel!
-    @IBOutlet weak var CautionLabel: UILabel!
     @IBOutlet weak var Ment1Label: UILabel!
-    @IBOutlet weak var Ment2Label: UILabel!
-    
-    
-    
+    @IBOutlet weak var HomeBtn: UIButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let complete_message_string = "가입이 완료되었습니다."
+        let complete_range = (complete_message_string as NSString).range(of: "완료")
+        let font = UIFont(name:"NotoSansCJKkr-Regular" , size: 22)
+        let attributeText = NSMutableAttributedString.init(string: complete_message_string)
+        attributeText.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.black, range: complete_range)
+        attributeText.addAttribute(NSAttributedString.Key.font, value: font as Any, range: complete_range)
         
-        JoinCompleteLabel.text = "가입이 완료되었습니다."
-        CautionLabel.text = "주의!"
-        Ment1Label.text = "* 회원가입 완료 되었습니다."
-        Ment2Label.text = "* 좀 더 다양한 기능의 사용을 원하시면 본인확인을 진행해 주세요."
+        JoinCompleteLabel.attributedText = attributeText
+        
+        
+        let info_string = "주의!\n\n* 회원가입 완료 되었습니다.\n* 좀 더 다양한 기능의 사용을 원하시면 본인확인\n 을 진행해 주세요."
+        
+        let range = (info_string as NSString).range(of: "주의!")
+        
+        let attribute = NSMutableAttributedString.init(string: info_string)
+        attribute.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.red, range: range)
+        attribute.addAttribute(NSAttributedString.Key.font, value: font as Any, range: range)
+        
+        Ment1Label.attributedText = attribute
+        
+        
+        
+        
+        
         
 
         // Do any additional setup after loading the view.
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func HomeMoveAction(_ sender: UIButton) {
+        JoinViewController.bHome = true
+         self.dismiss(animated: false, completion:nil)
     }
-    */
 
 }

@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var drawController = KYDrawerController(drawerDirection: .left, drawerWidth: 300)
+    var MainViewController:MainViewController?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -25,10 +26,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let storyboard = UIStoryboard.init(name: "Main", bundle: Bundle.main)
         
-        let mainView = storyboard.instantiateViewController(withIdentifier: "MainView")
+        MainViewController = (storyboard.instantiateViewController(withIdentifier: "MainView") as! MainViewController)
         let slideView = storyboard.instantiateViewController(withIdentifier: "SlideView")
-
-        self.drawController.mainViewController = UINavigationController(rootViewController: mainView)
+        
+        
+        
+        self.drawController.mainViewController = UINavigationController(rootViewController: MainViewController!)
         self.drawController.drawerViewController = slideView
 //
         self.window?.rootViewController = self.drawController

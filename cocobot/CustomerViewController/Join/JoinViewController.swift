@@ -33,12 +33,25 @@ class JoinViewController: UIViewController {
     let customer_icon: UIImageView = UIImageView()
     let store_icon: UIImageView = UIImageView()
     
+    
+     static var bHome = false
+    
+    
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.setupUI()
         self.setupEvent()
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        if JoinViewController.bHome == true{
+            JoinViewController.bHome = false
+            self.navigationController?.popToRootViewController(animated: true)
+        }
+        
     }
     
     func setupUI(){

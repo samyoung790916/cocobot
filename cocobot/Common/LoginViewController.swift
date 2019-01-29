@@ -12,25 +12,12 @@ import AnimatedTextInput
 import FullMaterialLoader
 
 
+import FacebookLogin
+import FacebookCore
+import KakaoOpenSDK
 
-struct LoginInfoData {
-    var status_code: String? = ""
-    var status: String?  = ""
-    var accessToken: String?  = ""
-    var user_tel: String?  = ""
-    var cvid: String?  = ""
-    var coinid: String?  = ""
-    var user_name: String?   = ""
-    var market_name: String?  = ""
-    var coint_pw: String?  = ""
-    
-    var firstLogin = 0
-    var recommender_cnt = 0
-    var user_role = 0
-    var marketInfos = 0
-    
-    var recommenderInfo = [[:]]
-}
+
+
 
 
 class LoginViewController: UIViewController {
@@ -38,7 +25,7 @@ class LoginViewController: UIViewController {
     //MARK: Data member variable
     var coin_id = ""
     static var isLogin = false
-    static var LoginData = LoginInfoData()
+  
     
     
     //MARK: UI member variable
@@ -119,34 +106,33 @@ class LoginViewController: UIViewController {
             if result == .success{
                 UserDefaults.standard.set(resultDict["userRole"], forKey: "userRole")
                 
-                
                 LoginViewController.isLogin = true
-                
-                LoginViewController.LoginData.coinid       = resultDict["coinid"] as? String
-                LoginViewController.LoginData.accessToken  = resultDict["accessToken"] as? String
-                LoginViewController.LoginData.coint_pw     = resultDict["coinpw"] as? String
-                LoginViewController.LoginData.user_tel     = resultDict["userTel"] as? String
-                LoginViewController.LoginData.user_name    = resultDict["username"] as? String
-                LoginViewController.LoginData.cvid         = resultDict["cvid"] as? String
-                LoginViewController.LoginData.status_code  = resultDict["status_code"] as? String
-                LoginViewController.LoginData.status       = resultDict["status"] as? String
-                
-                LoginViewController.LoginData.firstLogin   = (resultDict["firstLogin"] as! NSString).integerValue
-                LoginViewController.LoginData.user_role    = (resultDict["userRole"] as! NSString).integerValue
-                
-                LoginViewController.LoginData.recommender_cnt  = resultDict["recommenderCnt"] as! Int
-                LoginViewController.LoginData.marketInfos      = resultDict["marketInfos"] as! Int
-                
-                if LoginViewController.LoginData.recommender_cnt >= 1{
-                    
+                let app_delegate = UIApplication.shared.delegate as! AppDelegate
+                app_delegate.MainViewController?.user_login_info.coinid       = resultDict["coinid"] as? String
+                app_delegate.MainViewController?.user_login_info.accessToken  = resultDict["accessToken"] as? String
+                app_delegate.MainViewController?.user_login_info.coint_pw     = resultDict["coinpw"] as? String
+                app_delegate.MainViewController?.user_login_info.user_tel     = resultDict["userTel"] as? String
+                app_delegate.MainViewController?.user_login_info.user_name    = resultDict["username"] as? String
+                app_delegate.MainViewController?.user_login_info.cvid         = resultDict["cvid"] as? String
+                app_delegate.MainViewController?.user_login_info.status_code  = resultDict["status_code"] as? String
+                app_delegate.MainViewController?.user_login_info.status       = resultDict["status"] as? String
+
+                app_delegate.MainViewController?.user_login_info.firstLogin   = (resultDict["firstLogin"] as! NSString).integerValue
+                app_delegate.MainViewController?.user_login_info.user_role    = (resultDict["userRole"] as! NSString).integerValue
+
+                app_delegate.MainViewController?.user_login_info.recommender_cnt  = resultDict["recommenderCnt"] as! Int
+                app_delegate.MainViewController?.user_login_info.marketInfos      = resultDict["marketInfos"] as! Int
+
+                if (app_delegate.MainViewController?.user_login_info.recommender_cnt)! >= 1{
+
                     if let jsonArr = resultDict["recommenderInfo"] as? [[String:Any]]{
                         for index in 0 ..< jsonArr.count{
                             let dict = jsonArr[index]
-                            LoginViewController.LoginData.recommenderInfo.append(dict)
+                            app_delegate.MainViewController?.user_login_info.recommenderInfo.append(dict)
                         }
                     }
                 }
-                
+
                 self.navigationController?.popViewController(animated: true)
             }
             else{
@@ -167,9 +153,95 @@ class LoginViewController: UIViewController {
     }
     @objc func facebookEvent(_ sender : UIButton) {
         print("facebookEvent")
+        
+        let loginMgr = LoginManager()
+        loginMgr.logIn(readPermissions:[.publicProfile], viewController: self) { (result) in
+            
+            switch result{
+            case .failed(let error):
+                AJAlertController.initialization().showAlertWithOkButton(aStrMessage: "페이스북 서버에서 로그인이 실패했습니다.\n에러메세지:\(error.localizedDescription)") { (index, title) in}
+                
+            case .cancelled:
+                print("User canceled login.")
+            case .success(grantedPermissions: let grantedPermission, declinedPermissions: let declinedPermissions, token: let accessToken):
+                print("페이스북 조인 옵션 뷰")
+                print("grantedPermission:", grantedPermission)
+                print("declinedPermissions:", declinedPermissions)
+                
+                
+                if let id = accessToken.userId{
+                    
+                     let array = ["USER_FACEBOOK" : id]
+             
+                    
+                    APIService.shared.post(url: "sns_login/facebook", string: array.json(), resultCompletion: { (result, resultDict) in
+                        
+                        if result == .success{
+                            LoginViewController.isLogin = true
+                            let app_delegate = UIApplication.shared.delegate as! AppDelegate
+                            app_delegate.MainViewController?.user_login_info.accessToken = resultDict["accessToken"] as? String
+                            app_delegate.MainViewController?.user_login_info.firstLogin = (resultDict["firstLogin"] as! NSString).integerValue
+                            app_delegate.MainViewController?.user_login_info.user_role = (resultDict["userRole"] as! NSString).integerValue
+                            app_delegate.MainViewController?.user_login_info.recommender_cnt = resultDict["recommenderCnt"] as! Int
+                            self.navigationController?.popViewController(animated: true)
+                        }else{
+                            AJAlertController.initialization().showAlertWithOkButton(aStrMessage: resultDict["message"] as! String) { (index, title) in}
+                        }
+                    })
+                }
+                
+            }
+        }
+        
+        
+        
+        
     }
     @objc func kakaoEvent(_ sender : UIButton) {
         print("kakaoEvent")
+        
+        let session :KOSession = KOSession.shared()
+        
+        if session.isOpen() {
+            session.close()
+            
+        }
+        session.presentingViewController = self
+        session.open { (error) in
+            if error == nil
+            {
+                if session.isOpen()
+                {
+                    KOSessionTask.userMeTask(completion: { (error, me) in
+                        if let me = me as KOUserMe?
+                        {
+                            let array = ["USER_KAKAO" : me.id]
+                            APIService.shared.post(url: "sns_login/kakao", string: array.json()){[weak self] (result, resultDict) in
+                                if result == .success {
+                                    LoginViewController.isLogin = true
+                                    let app_delegate = UIApplication.shared.delegate as! AppDelegate
+                                    app_delegate.MainViewController?.user_login_info.accessToken = resultDict["accessToken"] as? String
+                                    app_delegate.MainViewController?.user_login_info.firstLogin = (resultDict["firstLogin"] as! NSString).integerValue
+                                    app_delegate.MainViewController?.user_login_info.user_role = (resultDict["userRole"] as! NSString).integerValue
+                                    app_delegate.MainViewController?.user_login_info.recommender_cnt = resultDict["recommenderCnt"] as! Int
+                                    self!.navigationController?.popViewController(animated: true)
+                                    
+                                    print("카카오톡 로그인")
+                                }
+                                else {
+                                    AJAlertController.initialization().showAlertWithOkButton(aStrMessage: resultDict["message"] as! String) { (index, title) in}
+                                }
+                            }
+                        }
+                    })
+                }else{
+                    print("카카오톡 열기 실패")
+                }
+            }
+        }
+        
+        
+        
     }
     @objc func findPwEvent(_ sender : UIButton) {
         print("findPwEvnet")

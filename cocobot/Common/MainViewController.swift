@@ -9,6 +9,44 @@
 import UIKit
 import KYDrawerController
 
+
+
+struct LoginInfoData {
+    var status_code: String? = ""
+    var status: String? = ""
+    var accessToken: String? = ""
+    var user_tel: String? = ""
+    var cvid: String? = ""
+    var coinid: String? = ""
+    var user_name: String? = ""
+    var market_name: String? = ""
+    var coint_pw: String? = ""
+    
+    var firstLogin:Int = 0
+    var recommender_cnt:Int = 0
+    var user_role:Int = 0
+    var marketInfos:Int = 0
+    
+    var recommenderInfo = [[:]]
+    
+    mutating func memset() {
+        self.status_code = ""
+        self.status = ""
+        self.accessToken = ""
+        self.user_tel = ""
+        self.cvid = ""
+        self.coinid = ""
+        self.user_name = ""
+        self.market_name = ""
+        self.coint_pw = ""
+        self.firstLogin = 0
+        self.recommender_cnt = 0
+        self.user_role = 0
+        self.marketInfos = 0
+        self.recommenderInfo = [[:]]
+    }
+}
+
 class MainViewController: UIViewController,UIScrollViewDelegate,TAPageControlDelegate {
     
     @IBOutlet weak var MainMenuTable: UITableView!
@@ -18,6 +56,9 @@ class MainViewController: UIViewController,UIScrollViewDelegate,TAPageControlDel
     var customPageControl: TAPageControl? = nil
     var imageList = Array<Any>()
     var bannerCell:BannerCell?
+    
+    var user_login_info = LoginInfoData()
+    var viewEnter:Bool = false
     
     @objc func addTapped(){
         if let drawController = navigationController?.parent as? KYDrawerController{
@@ -51,12 +92,23 @@ class MainViewController: UIViewController,UIScrollViewDelegate,TAPageControlDel
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        
         if LoginViewController.isLogin == true{
             
-            MainMenuTable.reloadData()
-            
-            self.timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(runImages), userInfo: nil, repeats: true)
-            print("/(LoginViewController.)")
+            if self.viewEnter == true{
+                self.viewEnter = false
+                return
+            }else{
+                MainMenuTable.reloadData()
+                self.timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(runImages), userInfo: nil, repeats: true)
+                
+                if user_login_info.user_role == 1{
+                }
+                else if user_login_info.user_role == 2{
+                }
+                else if user_login_info.user_role == 4{
+                }
+            }
         }
         else{
             
@@ -98,12 +150,32 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         if indexPath.row == 0{
             return
         }else if indexPath.row == 1{
+            self.viewEnter = true
             performSegue(withIdentifier: "WalletSegue", sender: self)
         }else if indexPath.row == 2{
+            if user_login_info.user_role == 5 || user_login_info.user_role == 6{
+                AJAlertController.initialization().showAlert(aStrMessage: "본인인증 확인을 진행하시겠습니까?", aCancelBtnTitle: "네", aOtherBtnTitle: "아니요") { (index, string) in
+                    if index == 0{
+                        //  인증 페이지로 간다..
+                    }
+                }
+                return
+            }
+            self.viewEnter = true
             performSegue(withIdentifier: "FranchiseSegue", sender: self)
         }else if indexPath.row == 3{
+            if user_login_info.user_role == 5 || user_login_info.user_role == 6{
+                AJAlertController.initialization().showAlert(aStrMessage: "본인인증 확인을 진행하시겠습니까?", aCancelBtnTitle: "네", aOtherBtnTitle: "아니요") { (index, string) in
+                    if index == 0{
+                        //  인증 페이지로 간다..
+                    }
+                }
+                return
+            }
+            self.viewEnter = true
             performSegue(withIdentifier: "EventSegue", sender: self)
         }else if indexPath.row == 4{
+            self.viewEnter = true
             performSegue(withIdentifier: "FriendSegue", sender: self)
         }
     }

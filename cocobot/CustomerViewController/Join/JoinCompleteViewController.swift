@@ -85,7 +85,6 @@ class JoinCompleteViewController: UIViewController {
             
             if status_code == 0 || status_code == 1{
                 AJAlertController.initialization().showAlertWithOkButton(aStrMessage: "서버에 저장되었습니다.") { (index, title) in
-                    
                     RegisterViewController.bHome = true
                     self.dismiss(animated: false, completion:nil)
                 }
