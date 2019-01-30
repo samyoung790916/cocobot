@@ -16,6 +16,8 @@ import FacebookLogin
 import FacebookCore
 import KakaoOpenSDK
 
+import WebKit
+
 
 
 
@@ -25,6 +27,10 @@ class LoginViewController: UIViewController {
     //MARK: Data member variable
     var coin_id = ""
     static var isLogin = false
+    
+    var wkWebView = WKWebView()
+    lazy var bridgeManager = BridgeMgr(webView: wkWebView)
+    var walletInfoDict =  [String:String]()
   
     
     
@@ -68,6 +74,11 @@ class LoginViewController: UIViewController {
         setupLayOut()
         setupEventSelector()
         hideKeyboardWhenTappedAround()
+        
+        
+        
+        
+
     }
 
     @objc func loginBtnEvent(_ sender : UIButton) {
@@ -110,7 +121,7 @@ class LoginViewController: UIViewController {
                 let app_delegate = UIApplication.shared.delegate as! AppDelegate
                 app_delegate.MainViewController?.user_login_info.coinid       = resultDict["coinid"] as? String
                 app_delegate.MainViewController?.user_login_info.accessToken  = resultDict["accessToken"] as? String
-                app_delegate.MainViewController?.user_login_info.coint_pw     = resultDict["coinpw"] as? String
+                app_delegate.MainViewController?.user_login_info.coin_pw     = resultDict["coinpw"] as? String
                 app_delegate.MainViewController?.user_login_info.user_tel     = resultDict["userTel"] as? String
                 app_delegate.MainViewController?.user_login_info.user_name    = resultDict["username"] as? String
                 app_delegate.MainViewController?.user_login_info.cvid         = resultDict["cvid"] as? String
@@ -132,7 +143,19 @@ class LoginViewController: UIViewController {
                         }
                     }
                 }
+                
+                if app_delegate.MainViewController?.user_login_info.user_role == 2 ||
+                   app_delegate.MainViewController?.user_login_info.user_role == 1{
+                    
+                    self.addBrideges()
 
+                    self.view.addSubview(self.wkWebView)
+                    let htmlPath = Bundle.main.path(forResource: "index", ofType: "html")
+                    let htmlUrl = URL(fileURLWithPath: htmlPath!, isDirectory: false)
+                    self.wkWebView.loadFileURL(htmlUrl, allowingReadAccessTo: htmlUrl)
+    
+                    return
+                }
                 self.navigationController?.popViewController(animated: true)
             }
             else{
@@ -148,6 +171,22 @@ class LoginViewController: UIViewController {
         }
         
     }
+    
+    func addBrideges(){
+        let app_delegate = UIApplication.shared.delegate as! AppDelegate
+        
+        bridgeManager.addBridge("currency") {(info) in
+            self.walletInfoDict = info as! [String : String]
+            app_delegate.MainViewController?.user_login_info.coin_total = info["total"] as! String
+            self.navigationController?.popViewController(animated: true)
+        }
+        bridgeManager.addBridge("finish") { (info) in
+            let coin_id = app_delegate.MainViewController?.user_login_info.coinid
+            self.wkWebView.evaluateJavaScript("call_log('\(coin_id!)')", completionHandler: nil)
+        }
+    }
+    
+    
     @objc func autoLoginEvent(_ sender : UIButton) {
         print("autoLoginEvent")
     }
@@ -172,8 +211,6 @@ class LoginViewController: UIViewController {
                 if let id = accessToken.userId{
                     
                      let array = ["USER_FACEBOOK" : id]
-             
-                    
                     APIService.shared.post(url: "sns_login/facebook", string: array.json(), resultCompletion: { (result, resultDict) in
                         
                         if result == .success{
@@ -192,10 +229,6 @@ class LoginViewController: UIViewController {
                 
             }
         }
-        
-        
-        
-        
     }
     @objc func kakaoEvent(_ sender : UIButton) {
         print("kakaoEvent")
@@ -239,17 +272,13 @@ class LoginViewController: UIViewController {
                 }
             }
         }
-        
-        
-        
     }
     @objc func findPwEvent(_ sender : UIButton) {
         print("findPwEvnet")
     }
     @objc func joinEvent(_ sender : UIButton) {
         print("joinEvnet")
-         performSegue(withIdentifier: "JoinSegue", sender: self)
-        
+        performSegue(withIdentifier: "JoinSegue", sender: self)
     }
     
 }

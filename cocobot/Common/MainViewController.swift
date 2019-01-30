@@ -8,6 +8,7 @@
 
 import UIKit
 import KYDrawerController
+import WebKit
 
 
 
@@ -20,7 +21,8 @@ struct LoginInfoData {
     var coinid: String? = ""
     var user_name: String? = ""
     var market_name: String? = ""
-    var coint_pw: String? = ""
+    var coin_pw: String? = ""
+    var coin_total: String? = ""
     
     var firstLogin:Int = 0
     var recommender_cnt:Int = 0
@@ -38,7 +40,8 @@ struct LoginInfoData {
         self.coinid = ""
         self.user_name = ""
         self.market_name = ""
-        self.coint_pw = ""
+        self.coin_pw = ""
+        self.coin_total = ""
         self.firstLogin = 0
         self.recommender_cnt = 0
         self.user_role = 0
@@ -59,7 +62,7 @@ class MainViewController: UIViewController,UIScrollViewDelegate,TAPageControlDel
     
     var user_login_info = LoginInfoData()
     var viewEnter:Bool = false
-    
+
     @objc func addTapped(){
         if let drawController = navigationController?.parent as? KYDrawerController{
             drawController.setDrawerState(.opened, animated: true)
@@ -85,7 +88,7 @@ class MainViewController: UIViewController,UIScrollViewDelegate,TAPageControlDel
         
         MainMenuTable.backgroundColor = UIColor.black
         MainMenuTable.separatorStyle = UITableViewCell.SeparatorStyle.none
-        
+
         self.navigationItem.title = "COCO"
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(LoginTapped))
@@ -99,24 +102,26 @@ class MainViewController: UIViewController,UIScrollViewDelegate,TAPageControlDel
                 self.viewEnter = false
                 return
             }else{
-                MainMenuTable.reloadData()
-                self.timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(runImages), userInfo: nil, repeats: true)
-                
-                if user_login_info.user_role == 1{
+                if user_login_info.user_role == 1 || user_login_info.user_role == 2{
+                    
                 }
                 else if user_login_info.user_role == 2{
                 }
                 else if user_login_info.user_role == 4{
                 }
+                MainMenuTable.reloadData()
+                self.timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(runImages), userInfo: nil, repeats: true)
             }
         }
         else{
             
         }
     }
+    
     override func viewDidDisappear(_ animated: Bool) {
         timer.invalidate()
     }
+    
     @objc func runImages() {
         
         if index == self.imageList.count - 1 {
@@ -271,7 +276,15 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
                 cell.SubTitle.textColor = UIColor.lightGray
                 
                 cell.MainTitle.text = "내 지갑"
-                cell.SubTitle.text = "현재 보유 디지털 토큰"
+                
+                if LoginViewController.isLogin == true{
+                    if self.user_login_info.user_role == 2 || self.user_login_info.user_role == 1{
+                        cell.SubTitle.text = "현재 보유 코인 : \(user_login_info.coin_total!)"
+                    }
+                }else{
+                    cell.SubTitle.text = "내 보유 코인 적립 내역을 확인하세요."
+                }
+
             }
             else if indexPath.row == 2{
                 cell.TitleImage.image = UIImage(named: "order_btn")
