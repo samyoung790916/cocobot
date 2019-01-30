@@ -54,7 +54,20 @@ class Identy_verification_ViewController: UIViewController,AnimatedTextInputDele
         doneBtn.backgroundColor = UIColor(hex: "#D8F900")
         certBtn.setImage(UIImage(named: "auth_btn"), for: .normal)
         
-        // Do any additional setup after loading the view.
+/*
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let termsview = storyboard.instantiateViewController(withIdentifier: "TermsViewController")
+        self.addChild(termsview)
+        
+        termsview.view.frame = self.view.bounds
+        self.view.addSubview(termsview.view)
+        termsview.didMove(toParent: self)
+ */
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
     }
 
     

@@ -10,8 +10,6 @@ import UIKit
 import KYDrawerController
 import WebKit
 
-
-
 struct LoginInfoData {
     var status_code: String? = ""
     var status: String? = ""
@@ -102,13 +100,6 @@ class MainViewController: UIViewController,UIScrollViewDelegate,TAPageControlDel
                 self.viewEnter = false
                 return
             }else{
-                if user_login_info.user_role == 1 || user_login_info.user_role == 2{
-                    
-                }
-                else if user_login_info.user_role == 2{
-                }
-                else if user_login_info.user_role == 4{
-                }
                 MainMenuTable.reloadData()
                 self.timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(runImages), userInfo: nil, repeats: true)
             }

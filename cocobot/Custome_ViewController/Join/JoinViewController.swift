@@ -33,16 +33,12 @@ class JoinViewController: UIViewController {
     let customer_icon: UIImageView = UIImageView()
     let store_icon: UIImageView = UIImageView()
     
-    
-     static var bHome = false
-    
-    
-    
-    
+    static var bHome = false
+    static var bIdenti = false
 
     override func viewDidLoad() {
-        super.viewDidLoad()
         
+        super.viewDidLoad()
         self.setupUI()
         self.setupEvent()
     }
@@ -50,6 +46,11 @@ class JoinViewController: UIViewController {
         if JoinViewController.bHome == true{
             JoinViewController.bHome = false
             self.navigationController?.popToRootViewController(animated: true)
+        }
+        else if JoinViewController.bIdenti == true{
+            JoinViewController.bIdenti = false
+            
+            performSegue(withIdentifier: "CertiSegue", sender: self)
         }
         
     }
@@ -160,12 +161,9 @@ class JoinViewController: UIViewController {
         store_label.text = "매장용 회원가입"
         store_label.font = UIFont(name:"NotoSansCJKkr-Regular" , size: 17)
         store_label.textAlignment = .center
-        
-
     }
     
     func setupEvent(){
-        
         let customer_touch   =  UITapGestureRecognizer(target: self, action: #selector(customer_join_action(_:)))
         let store_touch      =  UITapGestureRecognizer(target: self, action: #selector(store_join_action(_:)))
         
@@ -229,6 +227,7 @@ class JoinViewController: UIViewController {
     }
     
     @objc func facebook_join_action(_ sender : UIButton) {
+
         
         let loginMgr = LoginManager()
         loginMgr.logIn(readPermissions:[.publicProfile], viewController: self) { (result) in
@@ -269,7 +268,7 @@ class JoinViewController: UIViewController {
         
     }
     @objc func tel_join_action(_ sender : UIButton) {
-         performSegue(withIdentifier: "Identi_verification_segue", sender: self)
+         performSegue(withIdentifier: "TermsSegue", sender: self)
     }
 
     

@@ -25,10 +25,7 @@ class JoinAssocicateViewController: UIViewController {
         attributeText.addAttribute(NSAttributedString.Key.font, value: font as Any, range: complete_range)
         
         JoinCompleteLabel.attributedText = attributeText
-        
-        
         let info_string = "주의!\n\n* 회원가입 완료 되었습니다.\n* 좀 더 다양한 기능의 사용을 원하시면 본인확인\n 을 진행해 주세요."
-        
         let range = (info_string as NSString).range(of: "주의!")
         
         let attribute = NSMutableAttributedString.init(string: info_string)
@@ -36,17 +33,8 @@ class JoinAssocicateViewController: UIViewController {
         attribute.addAttribute(NSAttributedString.Key.font, value: font as Any, range: range)
         
         Ment1Label.attributedText = attribute
-        
-        
-        
-        
-        
-        
-
-        // Do any additional setup after loading the view.
     }
     
-
     @IBAction func HomeMoveAction(_ sender: UIButton) {
         JoinViewController.bHome = true
          self.dismiss(animated: false, completion:nil)

@@ -23,26 +23,18 @@ class RegisterViewController: UIViewController,AnimatedTextInputDelegate{
     
     static var bHome = false
 
-
-
     @IBOutlet weak var nameTextField:   AnimatedTextInput!
-    
-  
     @IBOutlet weak var pwCheckField:    AnimatedTextInput!
     @IBOutlet weak var pwTextField:     AnimatedTextInput!
     @IBOutlet weak var recTextField:    AnimatedTextInput!
-
-
     @IBOutlet weak var doneBtn: UIButton!
     
     override func viewWillAppear(_ animated: Bool) {
-        
         if RegisterViewController.bHome == true{
             RegisterViewController.bHome = false
             self.navigationController?.popToRootViewController(animated: true)
         }
     }
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -89,12 +81,10 @@ class RegisterViewController: UIViewController,AnimatedTextInputDelegate{
         bridgeManager.addBridge("coinid") {(info) in
            self.walletInfoDict = info as! [String : String]
         }
-
         bridgeManager.addBridge("finish") { (info) in
             print("call_register()")
             self.wkWebView.evaluateJavaScript("call_register()", completionHandler: nil)
         }
-
     }
 
     @objc func screenTapped(sender: UITapGestureRecognizer) {
@@ -210,9 +200,7 @@ class RegisterViewController: UIViewController,AnimatedTextInputDelegate{
     }
 }
 
-
 struct CustomTextInputStyle: AnimatedTextInputStyle {
-
     let placeholderInactiveColor = UIColor.gray
     let activeColor = UIColor.gray
     let inactiveColor = UIColor.gray.withAlphaComponent(0.3)

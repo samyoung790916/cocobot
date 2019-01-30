@@ -35,6 +35,8 @@
 		4A51BFE021F0834B0031ABFB /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A51BFDF21F0834B0031ABFB /* EventViewController.swift */; };
 		4A51BFE221F083770031ABFB /* FriendRecommendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A51BFE121F083770031ABFB /* FriendRecommendViewController.swift */; };
 		4A673A6F21F83A1700492810 /* Identy_verification_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A673A6E21F83A1700492810 /* Identy_verification_ViewController.swift */; };
+		4A7F592F2201664500C42344 /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7F592E2201664500C42344 /* TermsViewController.swift */; };
+		4A7F593122017D2D00C42344 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7F593022017D2D00C42344 /* UIView.swift */; };
 		4A83977C21E4432C007A8A58 /* SubCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A83977A21E4432C007A8A58 /* SubCell.swift */; };
 		4A83977D21E4432C007A8A58 /* SubCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A83977B21E4432C007A8A58 /* SubCell.xib */; };
 		4A83977F21E46355007A8A58 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A83977E21E46355007A8A58 /* LoginViewController.swift */; };
@@ -106,6 +108,8 @@
 		4A51BFDF21F0834B0031ABFB /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		4A51BFE121F083770031ABFB /* FriendRecommendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendRecommendViewController.swift; sourceTree = "<group>"; };
 		4A673A6E21F83A1700492810 /* Identy_verification_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identy_verification_ViewController.swift; sourceTree = "<group>"; };
+		4A7F592E2201664500C42344 /* TermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
+		4A7F593022017D2D00C42344 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		4A83977A21E4432C007A8A58 /* SubCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCell.swift; sourceTree = "<group>"; };
 		4A83977B21E4432C007A8A58 /* SubCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubCell.xib; sourceTree = "<group>"; };
 		4A83977E21E46355007A8A58 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -169,7 +173,7 @@
 				4A51BFE721F084BA0031ABFB /* Common */,
 				4A51BFE521F083ED0031ABFB /* Service */,
 				4A51BFE421F083D10031ABFB /* StoreViewController */,
-				4A51BFE321F083880031ABFB /* CustomerViewController */,
+				4A51BFE321F083880031ABFB /* Custome_ViewController */,
 				4A51BFCE21F068920031ABFB /* Local Data */,
 				4A3F6F8021EECB6500C70250 /* TAPageControl */,
 				4A3F6F7321ED760900C70250 /* Alert */,
@@ -232,7 +236,7 @@
 			path = "Local Data";
 			sourceTree = "<group>";
 		};
-		4A51BFE321F083880031ABFB /* CustomerViewController */ = {
+		4A51BFE321F083880031ABFB /* Custome_ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				4A673A6D21F839C600492810 /* Join */,
@@ -241,7 +245,7 @@
 				4A51BFDF21F0834B0031ABFB /* EventViewController.swift */,
 				4A51BFE121F083770031ABFB /* FriendRecommendViewController.swift */,
 			);
-			path = CustomerViewController;
+			path = Custome_ViewController;
 			sourceTree = "<group>";
 		};
 		4A51BFE421F083D10031ABFB /* StoreViewController */ = {
@@ -277,6 +281,7 @@
 				4A673A6E21F83A1700492810 /* Identy_verification_ViewController.swift */,
 				4A9B0E4621F9496700182B81 /* JoinCompleteViewController.swift */,
 				4AACDCC721FEF79F00F497AA /* JoinAssocicateViewController.swift */,
+				4A7F592E2201664500C42344 /* TermsViewController.swift */,
 			);
 			path = Join;
 			sourceTree = "<group>";
@@ -287,6 +292,7 @@
 				4A8397A821E5C044007A8A58 /* UIColor.swift */,
 				4A8397AA21E6D2C8007A8A58 /* UIFont.swift */,
 				4A3F6F7121ED744F00C70250 /* KeyBoard.swift */,
+				4A7F593022017D2D00C42344 /* UIView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -475,11 +481,13 @@
 				4A34A75521F6FB6400F966C4 /* ValidationMgr.swift in Sources */,
 				4A9B0E4721F9496700182B81 /* JoinCompleteViewController.swift in Sources */,
 				4A51BFDC21F082D70031ABFB /* WalletViewController.swift in Sources */,
+				4A7F593122017D2D00C42344 /* UIView.swift in Sources */,
 				4A26DFDA21DC90DC002C09BD /* APIService.swift in Sources */,
 				4A3F6F7E21EECAC200C70250 /* BannerCell.swift in Sources */,
 				4ADE7C6821DDC96B00E035E3 /* SlideViewController.swift in Sources */,
 				4A673A6F21F83A1700492810 /* Identy_verification_ViewController.swift in Sources */,
 				4A26DFB621DC70BB002C09BD /* AppDelegate.swift in Sources */,
+				4A7F592F2201664500C42344 /* TermsViewController.swift in Sources */,
 				4A3F6F8B21EECB7800C70250 /* TAAnimatedDotView.m in Sources */,
 				4A3F6F7221ED744F00C70250 /* KeyBoard.swift in Sources */,
 				4A34A73521F555AC00F966C4 /* RegisterViewController.swift in Sources */,
