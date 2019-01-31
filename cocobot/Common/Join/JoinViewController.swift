@@ -227,7 +227,6 @@ class JoinViewController: UIViewController {
     }
     
     @objc func facebook_join_action(_ sender : UIButton) {
-
         
         let loginMgr = LoginManager()
         loginMgr.logIn(readPermissions:[.publicProfile], viewController: self) { (result) in
@@ -249,7 +248,6 @@ class JoinViewController: UIViewController {
                         "USER_ROLE" : "5",
                         "USER_SNS" : id
                     ]
-                    
                     APIService.shared.post(url: "snsjoin/facebook", string: array.json(), resultCompletion: { (result, resultDict) in
                         
                         if result == .success{

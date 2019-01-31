@@ -60,8 +60,13 @@ class MainViewController: UIViewController,UIScrollViewDelegate,TAPageControlDel
     
     var user_login_info = LoginInfoData()
     var viewEnter:Bool = false
+    var bAppPurpose:Bool = true // 고객용이냐? 매장용이냐?
+    
+    
+    let custom_btn:UIButton  = UIButton.init(type: .custom)
+    let store_btn:UIButton   = UIButton.init(type: .custom)
 
-    @objc func addTapped(){
+    @objc func MenuAction(){
         if let drawController = navigationController?.parent as? KYDrawerController{
             drawController.setDrawerState(.opened, animated: true)
         }
@@ -88,8 +93,43 @@ class MainViewController: UIViewController,UIScrollViewDelegate,TAPageControlDel
         MainMenuTable.separatorStyle = UITableViewCell.SeparatorStyle.none
 
         self.navigationItem.title = "COCO"
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(LoginTapped))
+        
+        
+        
+        var customerImage: UIImage? = nil
+        var storeImage: UIImage? = nil
+        
+        if bAppPurpose == true{ // 고객용
+            customerImage = UIImage(named: "customer_btn")
+            storeImage = UIImage(named: "store_btn_d")
+        }else{ // 매장용
+            customerImage = UIImage(named: "customer_btn_d")
+            storeImage = UIImage(named: "store_btn")
+        }
+        
+        
+        custom_btn.setImage(customerImage, for: .normal)
+        custom_btn.addTarget(self, action: #selector(CustomerAciton), for: .touchUpInside)
+        custom_btn.frame = CGRect(x: 0, y: 0, width: 46, height: 23)
+        
+        store_btn.setImage(storeImage, for: .normal)
+        store_btn.addTarget(self, action: #selector(StoreAciton), for: .touchUpInside)
+        store_btn.frame = CGRect(x: 0, y: 0, width: 46, height: 23)
+        
+        
+        let addCustomerBtn  = UIBarButtonItem(customView: custom_btn)
+        let addStoreBtn     = UIBarButtonItem(customView: store_btn)
+        self.navigationItem.setRightBarButtonItems([addStoreBtn,addCustomerBtn], animated: true)
+        
+        
+        let menuImage = UIImage(named: "men_btn")
+        let menuBtn: UIButton = UIButton.init(type: .custom)
+        menuBtn.setImage(menuImage, for: .normal)
+        menuBtn.addTarget(self, action: #selector(MenuAction), for: .touchUpInside)
+        menuBtn.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        
+        let addMenuBtn = UIBarButtonItem(customView: menuBtn)
+        self.navigationItem.leftBarButtonItem = addMenuBtn
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -127,10 +167,38 @@ class MainViewController: UIViewController,UIScrollViewDelegate,TAPageControlDel
     func taPageControl(_ pageControl: TAPageControl!, didSelectPageAt currentIndex: Int) {
         
         index = currentIndex
-        
         let boundRect:CGRect = CGRect(x: (self.bannerCell?.contentView.frame.size.width)! * CGFloat(currentIndex), y: 0, width: (self.bannerCell?.contentView.frame.width)!, height: (self.bannerCell?.adImageScrollview.frame.size.height)!)
         
         self.bannerCell?.adImageScrollview.scrollRectToVisible(boundRect,animated: true)
+    }
+    
+    
+    @objc func CustomerAciton(){
+        
+        bAppPurpose = true
+        
+        let customerImage = UIImage(named: "customer_btn")
+        custom_btn.setImage(customerImage, for: .normal)
+        
+        let storeImage = UIImage(named: "store_btn_d")
+        store_btn.setImage(storeImage, for: .normal)
+        
+        MainMenuTable.reloadData()
+        
+    }
+    
+    @objc func StoreAciton(){
+        
+        bAppPurpose = false
+        
+        let customerImage = UIImage(named: "customer_btn_d")
+        custom_btn.setImage(customerImage, for: .normal)
+        
+        let storeImage = UIImage(named: "store_btn")
+        store_btn.setImage(storeImage, for: .normal)
+        
+        MainMenuTable.reloadData()
+        
     }
 }
 
@@ -260,51 +328,87 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
                 cell.SubTitle.font = UIFont(name:"NotoSansCJKkr-Regular" , size: 11)
             }
             
-            if indexPath.row == 1{
-                cell.TitleImage.image = UIImage(named: "wallet_btn")
+            
+            if self.bAppPurpose == true{
                 
-                cell.MainTitle.textColor = UIColor.white
-                cell.SubTitle.textColor = UIColor.lightGray
-                
-                cell.MainTitle.text = "내 지갑"
-                
-                if LoginViewController.isLogin == true{
-                    if self.user_login_info.user_role == 2 || self.user_login_info.user_role == 1{
-                        cell.SubTitle.text = "현재 보유 코인 : \(user_login_info.coin_total!)"
+                if indexPath.row == 1{
+                    cell.TitleImage.image = UIImage(named: "wallet_btn")
+                    cell.MainTitle.textColor = UIColor.white
+                    cell.SubTitle.textColor = UIColor.lightGray
+                    cell.MainTitle.text = "내 지갑"
+                    
+                    if LoginViewController.isLogin == true{
+                        if self.user_login_info.user_role == 2 || self.user_login_info.user_role == 1{
+                            cell.SubTitle.text = "현재 보유 코인 : \(user_login_info.coin_total!)"
+                        }
+                    }else{
+                        cell.SubTitle.text = "내 보유 코인 적립 내역을 확인하세요."
                     }
-                }else{
-                    cell.SubTitle.text = "내 보유 코인 적립 내역을 확인하세요."
                 }
-
+                else if indexPath.row == 2{
+                    cell.TitleImage.image = UIImage(named: "order_btn")
+                    cell.MainTitle.textColor = UIColor.white
+                    cell.SubTitle.textColor = UIColor.lightGray
+                    
+                    cell.MainTitle.text = "가맹점 찾기 및 메뉴 주문"
+                    cell.SubTitle.text = "주위 가맹점을 찾고 메뉴를 주문해 보세요"
+                }
+                else if indexPath.row == 3{
+                    cell.TitleImage.image = UIImage(named: "event_btn")
+                    
+                    cell.MainTitle.textColor = UIColor.white
+                    cell.SubTitle.textColor = UIColor.lightGray
+                    
+                    cell.MainTitle.text = "이벤트 및 공지사항"
+                    cell.SubTitle.text = "다양한 이벤트에 참여해 디지털 토큰을 적립하세요"
+                }
+                else if indexPath.row == 4{
+                    cell.TitleImage.image = UIImage(named: "recommend_btn")
+                    
+                    cell.MainTitle.textColor = UIColor.white
+                    cell.SubTitle.textColor = UIColor.lightGray
+                    
+                    cell.MainTitle.text = "친구추천"
+                    cell.SubTitle.text = "커피봇을 추처한고 디지털 토큰을 발행하세요"
+                }
+                return cell
             }
-            else if indexPath.row == 2{
-                cell.TitleImage.image = UIImage(named: "order_btn")
-                
-                cell.MainTitle.textColor = UIColor.white
-                cell.SubTitle.textColor = UIColor.lightGray
-                
-                cell.MainTitle.text = "가맹점 찾기 및 메뉴 주문"
-                cell.SubTitle.text = "주위 가맹점을 찾고 메뉴를 주문해 보세요"
+            else{
+                if indexPath.row == 1{
+                    cell.TitleImage.image = UIImage(named: "order_btn")
+                    cell.MainTitle.textColor = UIColor.white
+                    cell.SubTitle.textColor = UIColor.lightGray
+                    cell.MainTitle.text = "주문확인"
+                    cell.SubTitle.text = "고객의 주문을 확인하세요."
+                }
+                else if indexPath.row == 2{
+                    cell.TitleImage.image = UIImage(named: "store_menu")
+                    cell.MainTitle.textColor = UIColor.white
+                    cell.SubTitle.textColor = UIColor.lightGray
+                    
+                    cell.MainTitle.text = "메뉴입력 / 수정"
+                    cell.SubTitle.text = "우리 매장의 메뉴를 입력할 수 있어요."
+                }
+                else if indexPath.row == 3{
+                    cell.TitleImage.image = UIImage(named: "store_graph")
+                    
+                    cell.MainTitle.textColor = UIColor.white
+                    cell.SubTitle.textColor = UIColor.lightGray
+                    
+                    cell.MainTitle.text = "고객 통계 분석"
+                    cell.SubTitle.text = "우리 매장 고객의 통계를 확인하세요."
+                }
+                else if indexPath.row == 4{
+                    cell.TitleImage.image = UIImage(named: "store_notice")
+                    
+                    cell.MainTitle.textColor = UIColor.white
+                    cell.SubTitle.textColor = UIColor.lightGray
+                    
+                    cell.MainTitle.text = "공지사항"
+                    cell.SubTitle.text = "새로운 공지사항을 확인하세요."
+                }
+                return cell
             }
-            else if indexPath.row == 3{
-                cell.TitleImage.image = UIImage(named: "event_btn")
-                
-                cell.MainTitle.textColor = UIColor.white
-                cell.SubTitle.textColor = UIColor.lightGray
-                
-                cell.MainTitle.text = "이벤트 및 공지사항"
-                cell.SubTitle.text = "다양한 이벤트에 참여해 디지털 토큰을 적립하세요"
-            }
-            else if indexPath.row == 4{
-                cell.TitleImage.image = UIImage(named: "recommend_btn")
-                
-                cell.MainTitle.textColor = UIColor.white
-                cell.SubTitle.textColor = UIColor.lightGray
-                
-                cell.MainTitle.text = "친구추천"
-                cell.SubTitle.text = "커피봇을 추처한고 디지털 토큰을 발행하세요"
-            }
-            return cell
         }
     }
     
