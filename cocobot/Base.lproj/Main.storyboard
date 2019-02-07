@@ -29,7 +29,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bw4-Sa-j37" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5706" y="1264"/>
+            <point key="canvasLocation" x="-5905" y="1264"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="xOk-HE-yrL">
@@ -164,6 +164,7 @@
                     </view>
                     <connections>
                         <outlet property="MenuTableView" destination="rn5-N6-Sdr" id="I4R-Xh-Y4q"/>
+                        <segue destination="08a-4z-llo" kind="show" identifier="SideLoginSegue" id="Q8d-Gi-3h7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tqW-dV-NnN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -897,5 +898,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="c7F-Gq-fQe"/>
+        <segue reference="Q8d-Gi-3h7"/>
     </inferredMetricsTieBreakers>
 </document>

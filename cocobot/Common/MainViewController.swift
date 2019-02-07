@@ -447,11 +447,30 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         }
     }
     @objc func loginMainEvent(_ sender : UIButton) {
-        performSegue(withIdentifier: "LoginShow", sender: self)
+        self.LoginActionEvent()
+        
     }
     @objc func joinMainEvent(_ sender : UIButton) {
+        self.JoinActionEvent()
+        
+    }
+    
+    
+    func LoginActionEvent(){
+        performSegue(withIdentifier: "LoginShow", sender: self)
+        
+    }
+    func JoinActionEvent(){
         performSegue(withIdentifier: "JoinShow", sender: self)
     }
+    
+    func LogOutActionEvent(){
+        LoginViewController.isLogin = false
+        user_login_info.memset()
+        
+        self.MainMenuTable.reloadData()
+    }
+    
 }
 extension Dictionary{
     func json() -> String{
