@@ -441,13 +441,64 @@
                     <view key="view" contentMode="scaleToFill" id="q7k-2p-isN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZO3-jv-GYa">
+                                <rect key="frame" x="0.0" y="88" width="375" height="70"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="보유한 디지털 토큰" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SA7-Ey-fIE">
+                                        <rect key="frame" x="10" y="11" width="141" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="2M5-tI-maE"/>
+                                            <constraint firstAttribute="width" constant="141" id="zQA-UN-aIF"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ML7-0k-XS4">
+                                        <rect key="frame" x="107" y="34" width="260" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="QPe-jc-3FS"/>
+                                            <constraint firstAttribute="width" constant="260" id="wWn-WL-CPJ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="ML7-0k-XS4" firstAttribute="top" secondItem="ZO3-jv-GYa" secondAttribute="top" constant="34" id="KPP-rh-ViV"/>
+                                    <constraint firstAttribute="trailing" secondItem="ML7-0k-XS4" secondAttribute="trailing" constant="8" id="OEk-vn-kl3"/>
+                                    <constraint firstItem="SA7-Ey-fIE" firstAttribute="top" secondItem="ZO3-jv-GYa" secondAttribute="top" constant="11" id="Wgc-48-j3H"/>
+                                    <constraint firstAttribute="height" constant="70" id="Yfm-ck-VCR"/>
+                                    <constraint firstItem="SA7-Ey-fIE" firstAttribute="leading" secondItem="ZO3-jv-GYa" secondAttribute="leading" constant="10" id="pBy-bb-YvB"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidthV">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColorV">
+                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ZO3-jv-GYa" firstAttribute="leading" secondItem="qX9-gl-T71" secondAttribute="leading" id="cJ4-VF-U7L"/>
+                            <constraint firstItem="ZO3-jv-GYa" firstAttribute="top" secondItem="qX9-gl-T71" secondAttribute="top" id="oER-ca-aLS"/>
+                            <constraint firstItem="ZO3-jv-GYa" firstAttribute="trailing" secondItem="qX9-gl-T71" secondAttribute="trailing" id="qqy-9c-ucg"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="qX9-gl-T71"/>
                     </view>
+                    <connections>
+                        <outlet property="coinLabel" destination="ML7-0k-XS4" id="vy7-pU-5Ua"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="03n-xG-WWC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-8271" y="3058"/>
+            <point key="canvasLocation" x="-8271.2000000000007" y="3057.6354679802957"/>
         </scene>
         <!--Join View Controller-->
         <scene sceneID="QPG-5I-avv">

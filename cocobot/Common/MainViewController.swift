@@ -100,8 +100,6 @@ class MainViewController: UIViewController,UIScrollViewDelegate,TAPageControlDel
 
         self.navigationItem.title = "COCO"
         
-        
-        
         var customerImage: UIImage? = nil
         var storeImage: UIImage? = nil
         
@@ -149,9 +147,7 @@ class MainViewController: UIViewController,UIScrollViewDelegate,TAPageControlDel
                 MainMenuTable.reloadData()
                 self.timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(runImages), userInfo: nil, repeats: true)
             }
-        }
-        else{
-            
+        }else{
         }
     }
     
@@ -190,7 +186,6 @@ class MainViewController: UIViewController,UIScrollViewDelegate,TAPageControlDel
         store_btn.setImage(storeImage, for: .normal)
         
         MainMenuTable.reloadData()
-        
     }
     
     @objc func StoreAciton(){
@@ -224,46 +219,61 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
             if user_login_info.user_role == 5 || user_login_info.user_role == 6 {
                 
                 AJAlertController.initialization().showAlert(aStrMessage: "본인인증 확인을 진행하시겠습니까?", aCancelBtnTitle: "네", aOtherBtnTitle: "아니요") { (index, string) in
-                    if index == 0{
-                        //  인증 페이지로 간다..
-                        
-                        
+                    
+                    if index == 0{ //  인증 페이지로 간다..
                         if let navController = self.navigationController, let viewController = self.storyboard?.instantiateViewController(withIdentifier: "Identy_verification_ViewController") as? Identy_verification_ViewController{
+                            viewController.bSnsCondition = true
                             navController.pushViewController(viewController, animated: true)
                         }
-                        
-                        
-                        
-//
-//                        let CertiView = Identy_verification_ViewController()
-//                        self.navigationController?.pushViewController(CertiView, animated: true)
                     }
                 }
                 return
             }
-            
-            
+            else if LoginViewController.isLogin == false{
+                
+                AJAlertController.initialization().showAlert(aStrMessage: "로그인후 이용가능합니다.\n로그인 페이지로 이동하시겠습니까?", aCancelBtnTitle: "네", aOtherBtnTitle: "아니요") { (index, string) in
+                    
+                    if index == 0{ //  로그인 페이지로 간다..
+                        self.LoginActionEvent()
+                    }
+                }
+                return
+            }
             self.viewEnter = true
             performSegue(withIdentifier: "WalletSegue", sender: self)
-        }else if indexPath.row == 2{
+        }
+        else if indexPath.row == 2{
         
             self.viewEnter = true
             performSegue(withIdentifier: "FranchiseSegue", sender: self)
-        }else if indexPath.row == 3{
+        }
+        else if indexPath.row == 3{
       
             self.viewEnter = true
             performSegue(withIdentifier: "EventSegue", sender: self)
-        }else if indexPath.row == 4{
-            
+        }
+        else if indexPath.row == 4{
+
             if  user_login_info.user_role == 5 || user_login_info.user_role == 6 {
                 AJAlertController.initialization().showAlert(aStrMessage: "본인인증 확인을 진행하시겠습니까?", aCancelBtnTitle: "네", aOtherBtnTitle: "아니요") { (index, string) in
                     if index == 0{
                         //  인증 페이지로 간다..
+                        if let navController = self.navigationController, let viewController = self.storyboard?.instantiateViewController(withIdentifier: "Identy_verification_ViewController") as? Identy_verification_ViewController{
+                            navController.pushViewController(viewController, animated: true)
+                        }
                     }
                 }
                 return
             }
             
+            else if LoginViewController.isLogin == false{
+                AJAlertController.initialization().showAlert(aStrMessage: "로그인후 이용가능합니다.\n로그인 페이지로 이동하시겠습니까?", aCancelBtnTitle: "네", aOtherBtnTitle: "아니요") { (index, string) in
+                    if index == 0{ //  로그인 페이지로 간다..
+                        self.LoginActionEvent()
+                    }
+                }
+                return
+            }
             self.viewEnter = true
             performSegue(withIdentifier: "FriendSegue", sender: self)
         }
@@ -308,7 +318,8 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
                 cell.JoinBtn.layer.cornerRadius = 15.0
                 cell.JoinBtn.layer.borderWidth = 1.0
                 return cell
-            }else{
+            }
+            else{
                 let cell = tableView.dequeueReusableCell(withIdentifier: "BannerCell", for: indexPath) as! BannerCell
                 cell.selectionStyle = UITableViewCell.SelectionStyle.none
                 
@@ -444,9 +455,6 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
             return 70.0
         }
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-    }
     
     func BannerRequest(){
         APIService.shared.post(url: "getad_list?sort=kr", string: nil) { (result, resultDict) in
@@ -494,6 +502,19 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         user_login_info.memset()
         
         self.MainMenuTable.reloadData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "WalletSegue"{
+            let controller = segue.destination as! WalletViewController
+            controller.strbalance = user_login_info.coin_total!
+        }
+//        else if segue.identifier ==  "Identy_verification_ViewController"{
+//            let controller = segue.destination as! Identy_verification_ViewController
+//            controller.bSnsCondition = true
+//        }
+        
     }
     
 }

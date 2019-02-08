@@ -11,6 +11,8 @@ import SnapKit
 import AnimatedTextInput
 import FullMaterialLoader
 
+import ZVProgressHUD
+
 
 import FacebookLogin
 import FacebookCore
@@ -107,13 +109,21 @@ class LoginViewController: UIViewController {
             return
         }
         
+        ZVProgressHUD.displayStyle = .dark
+        ZVProgressHUD.maskType = .clear
+        ZVProgressHUD.animationType = .flat
+        
+        ZVProgressHUD.show()
+        
         let array = [
             "USER_TEL" : self.phoneTextField.text?.base64(),
             "USER_PW" : self.passwordTextField.text?.base64()
         ]
         
         APIService.shared.post(url: "login", string: array.json()) { (result, resultDict) in
-    
+            
+            ZVProgressHUD.dismiss()
+            
             if result == .success{
                 UserDefaults.standard.set(resultDict["userRole"], forKey: "userRole")
                 
