@@ -220,6 +220,8 @@ class LoginViewController: UIViewController {
                             app_delegate.MainViewController?.user_login_info.firstLogin = (resultDict["firstLogin"] as! NSString).integerValue
                             app_delegate.MainViewController?.user_login_info.user_role = (resultDict["userRole"] as! NSString).integerValue
                             app_delegate.MainViewController?.user_login_info.recommender_cnt = resultDict["recommenderCnt"] as! Int
+                            app_delegate.MainViewController?.user_login_info.facebookLogin = true  // 페이스북 로그인시 "페이스북 준회원"이라고 표기하기 위한 플래그
+                            
                             self.navigationController?.popViewController(animated: true)
                         }else{
                             AJAlertController.initialization().showAlertWithOkButton(aStrMessage: resultDict["message"] as! String) { (index, title) in}
@@ -252,11 +254,15 @@ class LoginViewController: UIViewController {
                             APIService.shared.post(url: "sns_login/kakao", string: array.json()){[weak self] (result, resultDict) in
                                 if result == .success {
                                     LoginViewController.isLogin = true
+                                    
                                     let app_delegate = UIApplication.shared.delegate as! AppDelegate
                                     app_delegate.MainViewController?.user_login_info.accessToken = resultDict["accessToken"] as? String
                                     app_delegate.MainViewController?.user_login_info.firstLogin = (resultDict["firstLogin"] as! NSString).integerValue
                                     app_delegate.MainViewController?.user_login_info.user_role = (resultDict["userRole"] as! NSString).integerValue
                                     app_delegate.MainViewController?.user_login_info.recommender_cnt = resultDict["recommenderCnt"] as! Int
+                                    app_delegate.MainViewController?.user_login_info.kakaoLogin = true  // 카카오 로그인시 "카카오 준회원"이라고 표기하기 위한 플래그
+                                    
+                                    
                                     self!.navigationController?.popViewController(animated: true)
                                     
                                     print("카카오톡 로그인")

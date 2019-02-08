@@ -32,11 +32,7 @@ class Identy_verification_ViewController: UIViewController,AnimatedTextInputDele
         self.navigationItem.title = "본인 인증"
         
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black,NSAttributedString.Key.font:  UIFont(name:"NotoSansCJKkr-Regular" , size: 18)!]
-        /*
-         self.navigationController?.navigationBar.titleTextAttributes =
-         [NSAttributedString.Key.foregroundColor: UIColor.red,
-         NSAttributedString.Key.font: UIFont(name: "mplus-1c-regular", size: 21)!]
- */
+
         phoneTextField.font = UIFont(name:"NotoSansCJKkr-Regular" , size: 18)
         phoneTextField.placeHolderText = "핸드폰 번호"
         phoneTextField.type = .numeric
@@ -53,17 +49,6 @@ class Identy_verification_ViewController: UIViewController,AnimatedTextInputDele
         
         doneBtn.backgroundColor = UIColor(hex: "#D8F900")
         certBtn.setImage(UIImage(named: "auth_btn"), for: .normal)
-        
-/*
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        let termsview = storyboard.instantiateViewController(withIdentifier: "TermsViewController")
-        self.addChild(termsview)
-        
-        termsview.view.frame = self.view.bounds
-        self.view.addSubview(termsview.view)
-        termsview.didMove(toParent: self)
- */
     }
     
     override func viewDidAppear(_ animated: Bool) {

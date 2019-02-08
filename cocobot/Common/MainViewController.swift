@@ -27,6 +27,9 @@ struct LoginInfoData {
     var user_role:Int = 0
     var marketInfos:Int = 0
     
+    var kakaoLogin:Bool = false
+    var facebookLogin:Bool = false
+    
     var recommenderInfo = [[:]]
     
     mutating func memset() {
@@ -45,6 +48,9 @@ struct LoginInfoData {
         self.user_role = 0
         self.marketInfos = 0
         self.recommenderInfo = [[:]]
+        
+        self.kakaoLogin = false
+        self.facebookLogin = false
     }
 }
 
@@ -214,21 +220,42 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         if indexPath.row == 0{
             return
         }else if indexPath.row == 1{
+            
+            if user_login_info.user_role == 5 || user_login_info.user_role == 6 {
+                
+                AJAlertController.initialization().showAlert(aStrMessage: "본인인증 확인을 진행하시겠습니까?", aCancelBtnTitle: "네", aOtherBtnTitle: "아니요") { (index, string) in
+                    if index == 0{
+                        //  인증 페이지로 간다..
+                        
+                        
+                        if let navController = self.navigationController, let viewController = self.storyboard?.instantiateViewController(withIdentifier: "Identy_verification_ViewController") as? Identy_verification_ViewController{
+                            navController.pushViewController(viewController, animated: true)
+                        }
+                        
+                        
+                        
+//
+//                        let CertiView = Identy_verification_ViewController()
+//                        self.navigationController?.pushViewController(CertiView, animated: true)
+                    }
+                }
+                return
+            }
+            
+            
             self.viewEnter = true
             performSegue(withIdentifier: "WalletSegue", sender: self)
         }else if indexPath.row == 2{
-            if user_login_info.user_role == 5 || user_login_info.user_role == 6{
-                AJAlertController.initialization().showAlert(aStrMessage: "본인인증 확인을 진행하시겠습니까?", aCancelBtnTitle: "네", aOtherBtnTitle: "아니요") { (index, string) in
-                    if index == 0{
-                        //  인증 페이지로 간다..
-                    }
-                }
-                return
-            }
+        
             self.viewEnter = true
             performSegue(withIdentifier: "FranchiseSegue", sender: self)
         }else if indexPath.row == 3{
-            if user_login_info.user_role == 5 || user_login_info.user_role == 6{
+      
+            self.viewEnter = true
+            performSegue(withIdentifier: "EventSegue", sender: self)
+        }else if indexPath.row == 4{
+            
+            if  user_login_info.user_role == 5 || user_login_info.user_role == 6 {
                 AJAlertController.initialization().showAlert(aStrMessage: "본인인증 확인을 진행하시겠습니까?", aCancelBtnTitle: "네", aOtherBtnTitle: "아니요") { (index, string) in
                     if index == 0{
                         //  인증 페이지로 간다..
@@ -236,9 +263,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
                 }
                 return
             }
-            self.viewEnter = true
-            performSegue(withIdentifier: "EventSegue", sender: self)
-        }else if indexPath.row == 4{
+            
             self.viewEnter = true
             performSegue(withIdentifier: "FriendSegue", sender: self)
         }
