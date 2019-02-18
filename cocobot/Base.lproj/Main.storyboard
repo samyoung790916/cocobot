@@ -70,6 +70,7 @@
                         <segue destination="PfR-6c-cmh" kind="show" id="sYJ-41-lD6"/>
                         <segue destination="Ylv-Ub-QNb" kind="show" id="ObY-B7-C8Z"/>
                         <segue destination="Vcy-Qm-xW2" kind="show" id="zZP-y2-5q1"/>
+                        <segue destination="KT7-gV-qr1" kind="show" identifier="PermissionSegue" id="Wru-UH-2Zl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UrB-Ac-5w9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -812,6 +813,21 @@
             </objects>
             <point key="canvasLocation" x="2254" y="1264"/>
         </scene>
+        <!--Permission Trans View Controller-->
+        <scene sceneID="hur-8C-Bgn">
+            <objects>
+                <viewController id="KT7-gV-qr1" customClass="PermissionTransViewController" customModule="cocobot" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Spj-So-dPz" customClass="ProgressView" customModule="ZVProgressHUD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="CDS-Yb-wW0"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4CN-Va-vun" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3092" y="1714"/>
+        </scene>
         <!--Identy verification View Controller-->
         <scene sceneID="n04-rf-uuc">
             <objects>
@@ -951,7 +967,7 @@
         <image name="join_img" width="72" height="72"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="YeQ-ul-cv5"/>
+        <segue reference="c7F-Gq-fQe"/>
         <segue reference="Bkk-u7-OZO"/>
     </inferredMetricsTieBreakers>
 </document>

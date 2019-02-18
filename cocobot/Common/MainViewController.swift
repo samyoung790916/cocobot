@@ -22,6 +22,8 @@ struct LoginInfoData {
     var coin_pw: String? = ""
     var coin_total: String? = ""
     
+    var sns_id: String? = ""
+    
     var firstLogin:Int = 0
     var recommender_cnt:Int = 0
     var user_role:Int = 0
@@ -43,6 +45,7 @@ struct LoginInfoData {
         self.market_name = ""
         self.coin_pw = ""
         self.coin_total = ""
+        self.sns_id = ""
         self.firstLogin = 0
         self.recommender_cnt = 0
         self.user_role = 0
@@ -54,6 +57,9 @@ struct LoginInfoData {
     }
 }
 
+@available(iOS 10.0, *)
+@available(iOS 10.0, *)
+@available(iOS 10.0, *)
 class MainViewController: UIViewController,UIScrollViewDelegate,TAPageControlDelegate {
     
     @IBOutlet weak var MainMenuTable: UITableView!
@@ -203,6 +209,7 @@ class MainViewController: UIViewController,UIScrollViewDelegate,TAPageControlDel
     }
 }
 
+@available(iOS 10.0, *)
 extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
@@ -216,28 +223,44 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
             return
         }else if indexPath.row == 1{
             
-            if user_login_info.user_role == 5 || user_login_info.user_role == 6 {
-                
-                AJAlertController.initialization().showAlert(aStrMessage: "본인인증 확인을 진행하시겠습니까?", aCancelBtnTitle: "네", aOtherBtnTitle: "아니요") { (index, string) in
+            if #available(iOS 10.0, *) {
+                if user_login_info.user_role == 5 || user_login_info.user_role == 6 {
                     
-                    if index == 0{ //  인증 페이지로 간다..
-                        if let navController = self.navigationController, let viewController = self.storyboard?.instantiateViewController(withIdentifier: "Identy_verification_ViewController") as? Identy_verification_ViewController{
-                            viewController.bSnsCondition = true
-                            navController.pushViewController(viewController, animated: true)
+                    AJAlertController.initialization().showAlert(aStrMessage: "본인인증 확인을 진행하시겠습니까?", aCancelBtnTitle: "네", aOtherBtnTitle: "아니요") { (index, string) in
+                        
+                        if index == 0{ //  인증 페이지로 간다..
+                            if let navController = self.navigationController, let viewController = self.storyboard?.instantiateViewController(withIdentifier: "Identy_verification_ViewController") as? Identy_verification_ViewController{
+                                viewController.bSnsCondition = true
+                                navController.pushViewController(viewController, animated: true)
+                            }
                         }
                     }
+                    return
                 }
-                return
-            }
-            else if LoginViewController.isLogin == false{
-                
-                AJAlertController.initialization().showAlert(aStrMessage: "로그인후 이용가능합니다.\n로그인 페이지로 이동하시겠습니까?", aCancelBtnTitle: "네", aOtherBtnTitle: "아니요") { (index, string) in
-                    
-                    if index == 0{ //  로그인 페이지로 간다..
-                        self.LoginActionEvent()
+                else if user_login_info.user_role == 1 && bAppPurpose == false{
+                    AJAlertController.initialization().showAlert(aStrMessage: "매장용 회원가입을 진행하시겠습니까?", aCancelBtnTitle: "네", aOtherBtnTitle: "아니요") { (index, string) in
+                        
+                        if index == 0{
+                            self.performSegue(withIdentifier: "PermissionSegue", sender: self)
+                            
+                            
+                        }
                     }
+                    return
+                    
                 }
-                return
+                else if LoginViewController.isLogin == false{
+                    
+                    AJAlertController.initialization().showAlert(aStrMessage: "로그인후 이용가능합니다.\n로그인 페이지로 이동하시겠습니까?", aCancelBtnTitle: "네", aOtherBtnTitle: "아니요") { (index, string) in
+                        
+                        if index == 0{ //  로그인 페이지로 간다..
+                            self.LoginActionEvent()
+                        }
+                    }
+                    return
+                }
+            } else {
+                // Fallback on earlier versions
             }
             self.viewEnter = true
             performSegue(withIdentifier: "WalletSegue", sender: self)
@@ -504,18 +527,18 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         self.MainMenuTable.reloadData()
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if segue.identifier == "WalletSegue"{
-            let controller = segue.destination as! WalletViewController
-            controller.strbalance = user_login_info.coin_total!
-        }
-//        else if segue.identifier ==  "Identy_verification_ViewController"{
-//            let controller = segue.destination as! Identy_verification_ViewController
-//            controller.bSnsCondition = true
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//
+//        if segue.identifier == "WalletSegue"{
+//            let controller = segue.destination as! WalletViewController
+//            controller.strbalance = user_login_info.coin_total!
 //        }
-        
-    }
+////        else if segue.identifier ==  "Identy_verification_ViewController"{
+////            let controller = segue.destination as! Identy_verification_ViewController
+////            controller.bSnsCondition = true
+////        }
+//
+//    }
     
 }
 extension Dictionary{

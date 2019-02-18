@@ -11,7 +11,7 @@ import SnapKit
 import AnimatedTextInput
 import FullMaterialLoader
 
-import ZVProgressHUD
+//import ZVProgressHUD
 
 
 import FacebookLogin
@@ -24,6 +24,7 @@ import WebKit
 
 
 
+@available(iOS 10.0, *)
 class LoginViewController: UIViewController {
     
     //MARK: Data member variable
@@ -57,6 +58,8 @@ class LoginViewController: UIViewController {
     
     
     var indicator: MaterialLoadingIndicator!
+    
+    var geometricLoader = GeometricLoader()
     
     
     var isCompletePassword : Bool{
@@ -109,11 +112,14 @@ class LoginViewController: UIViewController {
             return
         }
         
-        ZVProgressHUD.displayStyle = .dark
-        ZVProgressHUD.maskType = .clear
-        ZVProgressHUD.animationType = .flat
+//        ZVProgressHUD.displayStyle = .dark
+//        ZVProgressHUD.maskType = .clear
+//        ZVProgressHUD.animationType = .flat
+//
+//        ZVProgressHUD.show()
         
-        ZVProgressHUD.show()
+        geometricLoader = CirclesInMotion.createGeometricLoader()
+        geometricLoader.startAnimation()
         
         let array = [
             "USER_TEL" : self.phoneTextField.text?.base64(),
@@ -122,7 +128,8 @@ class LoginViewController: UIViewController {
         
         APIService.shared.post(url: "login", string: array.json()) { (result, resultDict) in
             
-            ZVProgressHUD.dismiss()
+            
+ //           ZVProgressHUD.dismiss()
             
             if result == .success{
                 UserDefaults.standard.set(resultDict["userRole"], forKey: "userRole")
@@ -153,20 +160,20 @@ class LoginViewController: UIViewController {
                         }
                     }
                 }
+
                 
                 if app_delegate.MainViewController?.user_login_info.user_role == 2 ||
                    app_delegate.MainViewController?.user_login_info.user_role == 1{
-                    
-                    self.addBrideges()
 
                     self.view.addSubview(self.wkWebView)
                     let htmlPath = Bundle.main.path(forResource: "index", ofType: "html")
                     let htmlUrl = URL(fileURLWithPath: htmlPath!, isDirectory: false)
                     self.wkWebView.loadFileURL(htmlUrl, allowingReadAccessTo: htmlUrl)
-    
-                    return
+
+
+                    self.addBrideges()
                 }
-                self.navigationController?.popViewController(animated: true)
+            //
             }
             else{
                 LoginViewController.isLogin = false
@@ -186,6 +193,7 @@ class LoginViewController: UIViewController {
         let app_delegate = UIApplication.shared.delegate as! AppDelegate
         
         bridgeManager.addBridge("currency") {(info) in
+            self.geometricLoader.stopAnimation()
             self.walletInfoDict = info as! [String : String]
             app_delegate.MainViewController?.user_login_info.coin_total = info["total"] as! String
             self.navigationController?.popViewController(animated: true)
@@ -226,6 +234,7 @@ class LoginViewController: UIViewController {
                         if result == .success{
                             LoginViewController.isLogin = true
                             let app_delegate = UIApplication.shared.delegate as! AppDelegate
+                            app_delegate.MainViewController?.user_login_info.sns_id = id
                             app_delegate.MainViewController?.user_login_info.accessToken = resultDict["accessToken"] as? String
                             app_delegate.MainViewController?.user_login_info.firstLogin = (resultDict["firstLogin"] as! NSString).integerValue
                             app_delegate.MainViewController?.user_login_info.user_role = (resultDict["userRole"] as! NSString).integerValue
@@ -270,6 +279,7 @@ class LoginViewController: UIViewController {
                                     app_delegate.MainViewController?.user_login_info.firstLogin = (resultDict["firstLogin"] as! NSString).integerValue
                                     app_delegate.MainViewController?.user_login_info.user_role = (resultDict["userRole"] as! NSString).integerValue
                                     app_delegate.MainViewController?.user_login_info.recommender_cnt = resultDict["recommenderCnt"] as! Int
+                                    app_delegate.MainViewController?.user_login_info.sns_id = me.id
                                     app_delegate.MainViewController?.user_login_info.kakaoLogin = true  // 카카오 로그인시 "카카오 준회원"이라고 표기하기 위한 플래그
                                     
                                     
@@ -299,6 +309,7 @@ class LoginViewController: UIViewController {
     
 }
 
+@available(iOS 10.0, *)
 extension LoginViewController{
     
     func setupUI(){

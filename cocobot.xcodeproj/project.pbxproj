@@ -24,6 +24,14 @@
 		4A3F6F8A21EECB7800C70250 /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F6F8421EECB7800C70250 /* TAAbstractDotView.m */; };
 		4A3F6F8B21EECB7800C70250 /* TAAnimatedDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F6F8521EECB7800C70250 /* TAAnimatedDotView.m */; };
 		4A3F6F8C21EECB7800C70250 /* TAPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F6F8821EECB7800C70250 /* TAPageControl.m */; };
+		4A4F51D2221A9C50007010C0 /* PermissionTransViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4F51D1221A9C50007010C0 /* PermissionTransViewController.swift */; };
+		4A4F51DD221AB3A9007010C0 /* GeometricLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4F51D6221AB3A9007010C0 /* GeometricLoader.swift */; };
+		4A4F51DE221AB3A9007010C0 /* WaterWaves.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4F51D7221AB3A9007010C0 /* WaterWaves.swift */; };
+		4A4F51DF221AB3A9007010C0 /* Orbit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4F51D8221AB3A9007010C0 /* Orbit.swift */; };
+		4A4F51E0221AB3A9007010C0 /* CirclesInMotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4F51D9221AB3A9007010C0 /* CirclesInMotion.swift */; };
+		4A4F51E1221AB3A9007010C0 /* Infinity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4F51DA221AB3A9007010C0 /* Infinity.swift */; };
+		4A4F51E2221AB3A9007010C0 /* CircleLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4F51DB221AB3A9007010C0 /* CircleLoader.swift */; };
+		4A4F51E3221AB3A9007010C0 /* BlinkingCircles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4F51DC221AB3A9007010C0 /* BlinkingCircles.swift */; };
 		4A51BFD421F068D30031ABFB /* base58.js in Resources */ = {isa = PBXBuildFile; fileRef = 4A51BFCF21F068D30031ABFB /* base58.js */; };
 		4A51BFD521F068D30031ABFB /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 4A51BFD021F068D30031ABFB /* index.html */; };
 		4A51BFD621F068D30031ABFB /* eos.js in Resources */ = {isa = PBXBuildFile; fileRef = 4A51BFD121F068D30031ABFB /* eos.js */; };
@@ -107,6 +115,14 @@
 		4A3F6F8621EECB7800C70250 /* TAAbstractDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAbstractDotView.h; sourceTree = "<group>"; };
 		4A3F6F8721EECB7800C70250 /* TAPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAPageControl.h; sourceTree = "<group>"; };
 		4A3F6F8821EECB7800C70250 /* TAPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAPageControl.m; sourceTree = "<group>"; };
+		4A4F51D1221A9C50007010C0 /* PermissionTransViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionTransViewController.swift; sourceTree = "<group>"; };
+		4A4F51D6221AB3A9007010C0 /* GeometricLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeometricLoader.swift; sourceTree = "<group>"; };
+		4A4F51D7221AB3A9007010C0 /* WaterWaves.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterWaves.swift; sourceTree = "<group>"; };
+		4A4F51D8221AB3A9007010C0 /* Orbit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Orbit.swift; sourceTree = "<group>"; };
+		4A4F51D9221AB3A9007010C0 /* CirclesInMotion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CirclesInMotion.swift; sourceTree = "<group>"; };
+		4A4F51DA221AB3A9007010C0 /* Infinity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Infinity.swift; sourceTree = "<group>"; };
+		4A4F51DB221AB3A9007010C0 /* CircleLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleLoader.swift; sourceTree = "<group>"; };
+		4A4F51DC221AB3A9007010C0 /* BlinkingCircles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlinkingCircles.swift; sourceTree = "<group>"; };
 		4A51BFCF21F068D30031ABFB /* base58.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = base58.js; sourceTree = "<group>"; };
 		4A51BFD021F068D30031ABFB /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		4A51BFD121F068D30031ABFB /* eos.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = eos.js; sourceTree = "<group>"; };
@@ -189,6 +205,7 @@
 		4A26DFB421DC70BB002C09BD /* cocobot */ = {
 			isa = PBXGroup;
 			children = (
+				4A4F51D3221AB37C007010C0 /* GometricLoaders */,
 				4A34A75621F70FAD00F966C4 /* Tool */,
 				4A51BFE721F084BA0031ABFB /* Common */,
 				4A51BFE521F083ED0031ABFB /* Service */,
@@ -246,6 +263,20 @@
 			path = TAPageControl;
 			sourceTree = "<group>";
 		};
+		4A4F51D3221AB37C007010C0 /* GometricLoaders */ = {
+			isa = PBXGroup;
+			children = (
+				4A4F51DC221AB3A9007010C0 /* BlinkingCircles.swift */,
+				4A4F51DB221AB3A9007010C0 /* CircleLoader.swift */,
+				4A4F51D9221AB3A9007010C0 /* CirclesInMotion.swift */,
+				4A4F51D6221AB3A9007010C0 /* GeometricLoader.swift */,
+				4A4F51DA221AB3A9007010C0 /* Infinity.swift */,
+				4A4F51D8221AB3A9007010C0 /* Orbit.swift */,
+				4A4F51D7221AB3A9007010C0 /* WaterWaves.swift */,
+			);
+			path = GometricLoaders;
+			sourceTree = "<group>";
+		};
 		4A51BFCE21F068920031ABFB /* Local Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -296,6 +327,7 @@
 				4ADE7C6721DDC96B00E035E3 /* SlideViewController.swift */,
 				4A83977E21E46355007A8A58 /* LoginViewController.swift */,
 				4A54E4A1220BD06E000AD6F4 /* LaunchViewController.swift */,
+				4A4F51D1221A9C50007010C0 /* PermissionTransViewController.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -461,8 +493,6 @@
 				"${BUILT_PRODUCTS_DIR}/FullMaterialLoader/FullMaterialLoader.framework",
 				"${BUILT_PRODUCTS_DIR}/KYDrawerController/KYDrawerController.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
-				"${BUILT_PRODUCTS_DIR}/ZVActivityIndicatorView/ZVActivityIndicatorView.framework",
-				"${BUILT_PRODUCTS_DIR}/ZVProgressHUD/ZVProgressHUD.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -479,8 +509,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FullMaterialLoader.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KYDrawerController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZVActivityIndicatorView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZVProgressHUD.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -518,18 +546,23 @@
 			files = (
 				4A83977F21E46355007A8A58 /* LoginViewController.swift in Sources */,
 				4A3F6F8A21EECB7800C70250 /* TAAbstractDotView.m in Sources */,
+				4A4F51E2221AB3A9007010C0 /* CircleLoader.swift in Sources */,
 				4A51BFE021F0834B0031ABFB /* EventViewController.swift in Sources */,
+				4A4F51E3221AB3A9007010C0 /* BlinkingCircles.swift in Sources */,
 				4A51BFDE21F083110031ABFB /* FranchiseViewController.swift in Sources */,
 				4A3F6F8921EECB7800C70250 /* TADotView.m in Sources */,
+				4A4F51DD221AB3A9007010C0 /* GeometricLoader.swift in Sources */,
 				4A5EDF262202E99000C6BBF1 /* StaticsticsViewController.swift in Sources */,
 				4A3F6F7621ED761900C70250 /* AJAlertController.swift in Sources */,
 				4A51BFDA21F06DBF0031ABFB /* JoinViewController.swift in Sources */,
+				4A4F51E1221AB3A9007010C0 /* Infinity.swift in Sources */,
 				4A34A75521F6FB6400F966C4 /* ValidationMgr.swift in Sources */,
 				4A9B0E4721F9496700182B81 /* JoinCompleteViewController.swift in Sources */,
 				4A51BFDC21F082D70031ABFB /* WalletViewController.swift in Sources */,
 				4A7F593122017D2D00C42344 /* UIView.swift in Sources */,
 				4A5EDF282202E9A800C6BBF1 /* NoticeViewController.swift in Sources */,
 				4A26DFDA21DC90DC002C09BD /* APIService.swift in Sources */,
+				4A4F51DF221AB3A9007010C0 /* Orbit.swift in Sources */,
 				4A3F6F7E21EECAC200C70250 /* BannerCell.swift in Sources */,
 				4ADE7C6821DDC96B00E035E3 /* SlideViewController.swift in Sources */,
 				4A673A6F21F83A1700492810 /* Identy_verification_ViewController.swift in Sources */,
@@ -544,12 +577,15 @@
 				4A83977C21E4432C007A8A58 /* SubCell.swift in Sources */,
 				4AC4C895220BF80D00195893 /* SideSubCell.swift in Sources */,
 				4A54E4A2220BD06E000AD6F4 /* LaunchViewController.swift in Sources */,
+				4A4F51D2221A9C50007010C0 /* PermissionTransViewController.swift in Sources */,
 				4AC4C891220BF7F800195893 /* SideMainCell.swift in Sources */,
+				4A4F51E0221AB3A9007010C0 /* CirclesInMotion.swift in Sources */,
 				4A34A75821F7102900F966C4 /* BridgeMgr.swift in Sources */,
 				4A8397A521E493B6007A8A58 /* ViewController.swift in Sources */,
 				4A8397AB21E6D2C8007A8A58 /* UIFont.swift in Sources */,
 				4ADE7C7621DDEBE600E035E3 /* MainMenuCell.swift in Sources */,
 				4A5EDF242202E94400C6BBF1 /* MenuInputViewController.swift in Sources */,
+				4A4F51DE221AB3A9007010C0 /* WaterWaves.swift in Sources */,
 				4A5EDF222202E93000C6BBF1 /* OrderlistViewController.swift in Sources */,
 				4A51BFE221F083770031ABFB /* FriendRecommendViewController.swift in Sources */,
 				4AACDCC821FEF79F00F497AA /* JoinAssocicateViewController.swift in Sources */,

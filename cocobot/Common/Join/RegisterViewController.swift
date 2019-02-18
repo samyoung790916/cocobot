@@ -10,6 +10,8 @@ import UIKit
 import AnimatedTextInput
 import WebKit
 
+@available(iOS 10.0, *)
+@available(iOS 10.0, *)
 class RegisterViewController: UIViewController,AnimatedTextInputDelegate{
 
     var wkWebView = WKWebView()
@@ -22,6 +24,7 @@ class RegisterViewController: UIViewController,AnimatedTextInputDelegate{
     var phoneNumber:String?
     
     static var bHome = false
+    var bSnsJoin = false
 
     @IBOutlet weak var nameTextField:   AnimatedTextInput!
     @IBOutlet weak var pwCheckField:    AnimatedTextInput!
@@ -161,6 +164,10 @@ class RegisterViewController: UIViewController,AnimatedTextInputDelegate{
         self.reuquestUserJoin()
     }
 
+    @available(iOS 10.0, *)
+    @available(iOS 10.0, *)
+    @available(iOS 10.0, *)
+    @available(iOS 10.0, *)
     func reuquestUserJoin(){
         var array = [
             "USER_ROLE" : "1",
@@ -174,18 +181,55 @@ class RegisterViewController: UIViewController,AnimatedTextInputDelegate{
             array["RECOMMENDER"] = self.recTextField.text?.base64()
         }
         
-        APIService.shared.post(url: "join", string: array.json()) { (result, resultDict) in
-            
-            let status_code = resultDict["status_code"] as! Int
-            
-            if status_code == 0 || status_code == 1{
-                AJAlertController.initialization().showAlertWithOkButton(aStrMessage: "가입에 성공하였습니다.") { (index, title) in
-                    //self.navigationController?.popToRootViewController(animated: true)
-                     self.performSegue(withIdentifier: "ModalSegue", sender: self)
+        if bSnsJoin == false{
+            APIService.shared.post(url: "join", string: array.json()) { (result, resultDict) in
+                
+                let status_code = resultDict["status_code"] as! Int
+                
+                if status_code == 0 || status_code == 1{
+                    AJAlertController.initialization().showAlertWithOkButton(aStrMessage: "가입에 성공하였습니다.") { (index, title) in
+                         self.performSegue(withIdentifier: "ModalSegue", sender: self)
+                    }
+                }else if status_code == 1000{
+                    AJAlertController.initialization().showAlertWithOkButton(aStrMessage: resultDict["message"] as! String) { (index, title) in}
                 }
-            }else if status_code == 1000{
-                AJAlertController.initialization().showAlertWithOkButton(aStrMessage: resultDict["message"] as! String) { (index, title) in}
             }
+        }else{
+            
+            var sns_kind = ""
+            var sns_id = ""
+            let app_delegate = UIApplication.shared.delegate as! AppDelegate
+            
+            if app_delegate.MainViewController?.user_login_info.kakaoLogin == true{
+                sns_kind = "kakao"
+            }else if app_delegate.MainViewController?.user_login_info.facebookLogin == true{
+                sns_kind = "facebook"
+            }
+            
+            sns_id = (app_delegate.MainViewController?.user_login_info.sns_id)!
+            
+            
+            
+            
+            array.updateValue(sns_id, forKey: "USER_SNS")
+            array.updateValue(sns_kind, forKey: "SNS_SORT")
+            array.updateValue("5", forKey: "USER_ROLE")
+            
+            
+            
+            // sns join할때
+            APIService.shared.post(url: "/update_snsUsers", string: array.json()) { (result, resultDict) in
+                let status_code = resultDict["status_code"] as! Int
+                
+                if status_code == 0 || status_code == 1{
+                    AJAlertController.initialization().showAlertWithOkButton(aStrMessage: "가입에 성공하였습니다.") { (index, title) in
+                        self.performSegue(withIdentifier: "ModalSegue", sender: self)
+                    }
+                }else{
+                    AJAlertController.initialization().showAlertWithOkButton(aStrMessage: resultDict["message"] as! String) { (index, title) in}
+                }
+            }
+            
         }
     }
     
@@ -194,6 +238,7 @@ class RegisterViewController: UIViewController,AnimatedTextInputDelegate{
             if let destinationVC = segue.destination as? JoinCompleteViewController {
                 destinationVC.phoneNumber = self.phoneNumber?.replace(of: "-", with: "").base64()
                 destinationVC.privatekey = self.walletInfoDict["key"]
+                
             }
         }
         

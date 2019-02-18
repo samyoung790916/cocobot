@@ -77,7 +77,7 @@ class Identy_verification_ViewController: UIViewController,AnimatedTextInputDele
             switch result{
             case .success(let phoneNumber):
                 self.phoneTextField.text = phoneNumber?.withHypen
-                self.requestCertiPhonNumber()
+                //self.requestCertiPhonNumber()
                 if bSnsCondition == false{
                     self.requestCertiPhonNumber()   // 조인
                 }else{
@@ -136,6 +136,7 @@ class Identy_verification_ViewController: UIViewController,AnimatedTextInputDele
                 
                 if resultDict["status_code"] as! NSNumber == 0{
                     AJAlertController.initialization().showAlertWithOkButton(aStrMessage: "신규회원 인증 완료.") { (index, title) in
+                        self.performSegue(withIdentifier: "RegiShow", sender: self)
                     }
                 }
                 else if resultDict["status_code"] as! NSNumber == 1005{
@@ -193,8 +194,13 @@ class Identy_verification_ViewController: UIViewController,AnimatedTextInputDele
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "RegiShow"{
-            if let destinationVC = segue.destination as? RegisterViewController {
-                destinationVC.phoneNumber = self.phoneTextField.text
+            if #available(iOS 10.0, *) {
+                if let destinationVC = segue.destination as? RegisterViewController {
+                    destinationVC.phoneNumber = self.phoneTextField.text
+                    destinationVC.bSnsJoin = self.bSnsCondition
+                }
+            } else {
+                // Fallback on earlier versions
             }
         }
         
