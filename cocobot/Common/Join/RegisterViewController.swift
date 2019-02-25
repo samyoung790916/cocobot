@@ -168,7 +168,11 @@ class RegisterViewController: UIViewController,AnimatedTextInputDelegate{
     @available(iOS 10.0, *)
     @available(iOS 10.0, *)
     @available(iOS 10.0, *)
+    
+    
     func reuquestUserJoin(){
+        
+        
         var array = [
             "USER_ROLE" : "1",
             "USER_PW" : self.pwCheckField.text?.base64() as Any,
@@ -176,6 +180,10 @@ class RegisterViewController: UIViewController,AnimatedTextInputDelegate{
             "USER_TEL" : self.phoneNumber?.replace(of: "-", with: "").base64() as Any,
             "USER_COINID": self.walletInfoDict["key"] as Any
         ] as [String : Any]
+        
+        if JoinViewController.bJoinType == true{
+             array.updateValue("2", forKey: "USER_ROLE") // 점주용
+        }
         
         if recTextField.text != ""{
             array["RECOMMENDER"] = self.recTextField.text?.base64()
@@ -208,14 +216,9 @@ class RegisterViewController: UIViewController,AnimatedTextInputDelegate{
             
             sns_id = (app_delegate.MainViewController?.user_login_info.sns_id)!
             
-            
-            
-            
             array.updateValue(sns_id, forKey: "USER_SNS")
             array.updateValue(sns_kind, forKey: "SNS_SORT")
             array.updateValue("5", forKey: "USER_ROLE")
-            
-            
             
             // sns join할때
             APIService.shared.post(url: "/update_snsUsers", string: array.json()) { (result, resultDict) in

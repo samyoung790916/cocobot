@@ -59,7 +59,6 @@
 		4A9B0E4721F9496700182B81 /* JoinCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9B0E4621F9496700182B81 /* JoinCompleteViewController.swift */; };
 		4A9B0E4921F9882900182B81 /* NotoSansCJKkr-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4A9B0E4821F987F300182B81 /* NotoSansCJKkr-Regular.otf */; };
 		4AACDCC321FEE9F400F497AA /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AACDCC221FEE9F300F497AA /* KakaoOpenSDK.framework */; };
-		4AACDCC521FEEBDC00F497AA /* KakaoOpenSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4AACDCC221FEE9F300F497AA /* KakaoOpenSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4AACDCC821FEF79F00F497AA /* JoinAssocicateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AACDCC721FEF79F00F497AA /* JoinAssocicateViewController.swift */; };
 		4AC4C88D220BEA7300195893 /* coco_opening.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4AC4C88C220BEA6200195893 /* coco_opening.mp4 */; };
 		4AC4C891220BF7F800195893 /* SideMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC4C88F220BF7F800195893 /* SideMainCell.swift */; };
@@ -70,7 +69,7 @@
 		4ADE7C6821DDC96B00E035E3 /* SlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE7C6721DDC96B00E035E3 /* SlideViewController.swift */; };
 		4ADE7C7621DDEBE600E035E3 /* MainMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADE7C7421DDEBE600E035E3 /* MainMenuCell.swift */; };
 		4ADE7C7721DDEBE600E035E3 /* MainMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4ADE7C7521DDEBE600E035E3 /* MainMenuCell.xib */; };
-		66A8E138B720D5A49DA021DB /* Pods_cocobot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F3F2E1ABDE34E2AAD9ACD2 /* Pods_cocobot.framework */; };
+		4AE189922223DA6B00EBAE67 /* Pods_cocobot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F3F2E1ABDE34E2AAD9ACD2 /* Pods_cocobot.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -80,7 +79,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				4AACDCC521FEEBDC00F497AA /* KakaoOpenSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -160,6 +158,28 @@
 		4ADE7C6721DDC96B00E035E3 /* SlideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideViewController.swift; sourceTree = "<group>"; };
 		4ADE7C7421DDEBE600E035E3 /* MainMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuCell.swift; sourceTree = "<group>"; };
 		4ADE7C7521DDEBE600E035E3 /* MainMenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenuCell.xib; sourceTree = "<group>"; };
+		4AE1895A2223D92900EBAE67 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AE1895C2223D92900EBAE67 /* AlamofireImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AlamofireImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AE1895E2223D92900EBAE67 /* AnimatedTextInput.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AnimatedTextInput.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AE189602223D92900EBAE67 /* Bolts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Bolts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AE189622223D92900EBAE67 /* FacebookCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FacebookCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AE189642223D92900EBAE67 /* FacebookLogin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FacebookLogin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AE189662223D92900EBAE67 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AE189682223D92900EBAE67 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AE1896A2223D92900EBAE67 /* FullMaterialLoader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FullMaterialLoader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AE1896C2223D92900EBAE67 /* KYDrawerController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = KYDrawerController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AE1896E2223D92900EBAE67 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AE1897C2223D9AF00EBAE67 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AE1897E2223D9AF00EBAE67 /* AlamofireImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AlamofireImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AE189802223D9AF00EBAE67 /* AnimatedTextInput.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AnimatedTextInput.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AE189822223D9AF00EBAE67 /* Bolts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Bolts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AE189842223D9AF00EBAE67 /* FacebookCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FacebookCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AE189862223D9AF00EBAE67 /* FacebookLogin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FacebookLogin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AE189882223D9AF00EBAE67 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AE1898A2223D9AF00EBAE67 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AE1898C2223D9AF00EBAE67 /* FullMaterialLoader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FullMaterialLoader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AE1898E2223D9AF00EBAE67 /* KYDrawerController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = KYDrawerController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AE189902223D9AF00EBAE67 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,7 +187,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66A8E138B720D5A49DA021DB /* Pods_cocobot.framework in Frameworks */,
+				4AE189922223DA6B00EBAE67 /* Pods_cocobot.framework in Frameworks */,
 				4AACDCC321FEE9F400F497AA /* KakaoOpenSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -178,6 +198,28 @@
 		0C5A1A3F453ED52A76C60515 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4AE1897C2223D9AF00EBAE67 /* Alamofire.framework */,
+				4AE1897E2223D9AF00EBAE67 /* AlamofireImage.framework */,
+				4AE189802223D9AF00EBAE67 /* AnimatedTextInput.framework */,
+				4AE189822223D9AF00EBAE67 /* Bolts.framework */,
+				4AE189842223D9AF00EBAE67 /* FacebookCore.framework */,
+				4AE189862223D9AF00EBAE67 /* FacebookLogin.framework */,
+				4AE189882223D9AF00EBAE67 /* FBSDKCoreKit.framework */,
+				4AE1898A2223D9AF00EBAE67 /* FBSDKLoginKit.framework */,
+				4AE1898C2223D9AF00EBAE67 /* FullMaterialLoader.framework */,
+				4AE1898E2223D9AF00EBAE67 /* KYDrawerController.framework */,
+				4AE189902223D9AF00EBAE67 /* SnapKit.framework */,
+				4AE1895A2223D92900EBAE67 /* Alamofire.framework */,
+				4AE1895C2223D92900EBAE67 /* AlamofireImage.framework */,
+				4AE1895E2223D92900EBAE67 /* AnimatedTextInput.framework */,
+				4AE189602223D92900EBAE67 /* Bolts.framework */,
+				4AE189622223D92900EBAE67 /* FacebookCore.framework */,
+				4AE189642223D92900EBAE67 /* FacebookLogin.framework */,
+				4AE189662223D92900EBAE67 /* FBSDKCoreKit.framework */,
+				4AE189682223D92900EBAE67 /* FBSDKLoginKit.framework */,
+				4AE1896A2223D92900EBAE67 /* FullMaterialLoader.framework */,
+				4AE1896C2223D92900EBAE67 /* KYDrawerController.framework */,
+				4AE1896E2223D92900EBAE67 /* SnapKit.framework */,
 				4AACDCC221FEE9F300F497AA /* KakaoOpenSDK.framework */,
 				19F3F2E1ABDE34E2AAD9ACD2 /* Pods_cocobot.framework */,
 			);
@@ -747,6 +789,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MACH_O_TYPE = mh_execute;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
@@ -773,7 +816,7 @@
 					"\"SnapKit\"",
 					"-all_load",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.cocobot.kr;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ghsoft.CoCo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "cocobot/cocobot-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -799,6 +842,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MACH_O_TYPE = mh_execute;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
@@ -825,7 +869,7 @@
 					"\"SnapKit\"",
 					"-all_load",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.cocobot.kr;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ghsoft.CoCo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "cocobot/cocobot-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;

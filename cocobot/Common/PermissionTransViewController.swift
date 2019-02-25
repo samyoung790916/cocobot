@@ -10,9 +10,13 @@ import UIKit
 
 class PermissionTransViewController: UIViewController {
 
+    @IBOutlet weak var InfoLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
             self.navigationItem.title = "비밀번호 설정"
+        
+        InfoLabel.numberOfLines = 0
+        InfoLabel.text = "설정한 비밀번호는 매장내 비치된 빈큐에 사용되며,\n 전화번호 앱 로그인시에도 사용할 수 있습니다."
 
         // Do any additional setup after loading the view.
     }

@@ -130,9 +130,12 @@ class LoginViewController: UIViewController {
             
             
  //           ZVProgressHUD.dismiss()
+            self.geometricLoader.stopAnimation()
             
             if result == .success{
                 UserDefaults.standard.set(resultDict["userRole"], forKey: "userRole")
+                
+                
                 
                 LoginViewController.isLogin = true
                 let app_delegate = UIApplication.shared.delegate as! AppDelegate
@@ -160,10 +163,16 @@ class LoginViewController: UIViewController {
                         }
                     }
                 }
+                
+             //    self.navigationController?.popViewController(animated: true)
 
                 
                 if app_delegate.MainViewController?.user_login_info.user_role == 2 ||
                    app_delegate.MainViewController?.user_login_info.user_role == 1{
+                    
+                    
+                    self.addBrideges()
+
 
                     self.view.addSubview(self.wkWebView)
                     let htmlPath = Bundle.main.path(forResource: "index", ofType: "html")
@@ -171,7 +180,6 @@ class LoginViewController: UIViewController {
                     self.wkWebView.loadFileURL(htmlUrl, allowingReadAccessTo: htmlUrl)
 
 
-                    self.addBrideges()
                 }
             //
             }
@@ -193,7 +201,7 @@ class LoginViewController: UIViewController {
         let app_delegate = UIApplication.shared.delegate as! AppDelegate
         
         bridgeManager.addBridge("currency") {(info) in
-            self.geometricLoader.stopAnimation()
+           
             self.walletInfoDict = info as! [String : String]
             app_delegate.MainViewController?.user_login_info.coin_total = info["total"] as! String
             self.navigationController?.popViewController(animated: true)

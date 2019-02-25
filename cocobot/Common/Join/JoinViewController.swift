@@ -35,6 +35,7 @@ class JoinViewController: UIViewController {
     
     static var bHome = false
     static var bIdenti = false
+    static var bJoinType = false
 
     override func viewDidLoad() {
         
@@ -179,11 +180,13 @@ class JoinViewController: UIViewController {
     
     //MARK: 고객,점주 가입 이벤트
     @objc func customer_join_action(_ sender:UITapGestureRecognizer){
+        JoinViewController.bJoinType = false
         self.show_join_popup()
     }
     
     @objc func store_join_action(_ sender:UITapGestureRecognizer){
-        
+        JoinViewController.bJoinType = true
+        self.show_join_popup()
     }
     
     @objc func popup_close_action(_ sender : UIButton) {

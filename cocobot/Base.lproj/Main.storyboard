@@ -820,13 +820,60 @@
                     <view key="view" contentMode="scaleToFill" id="Spj-So-dPz" customClass="ProgressView" customModule="ZVProgressHUD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="매장용 비밀번호가 없습니다. 비밀번호를 설정해 주세요." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HFn-ug-UmJ">
+                                <rect key="frame" x="7" y="100" width="361" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="z67-i4-bAW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="15"/>
+                                <color key="textColor" red="0.091440893709659576" green="0.70728617906570435" blue="0.70829886198043823" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W81-Pf-V5T">
+                                <rect key="frame" x="7" y="151" width="361" height="88"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="88" id="MUA-VX-74R"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ALF-hW-d7i" customClass="AnimatedTextInput" customModule="AnimatedTextInput">
+                                <rect key="frame" x="0.0" y="349" width="375" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="hYA-Ys-RmJ"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8vg-X6-vLs" customClass="AnimatedTextInput" customModule="AnimatedTextInput">
+                                <rect key="frame" x="0.0" y="262" width="375" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="C2h-3L-qY1"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="CDS-Yb-wW0" firstAttribute="trailing" secondItem="HFn-ug-UmJ" secondAttribute="trailing" constant="7" id="4nm-Kg-oSS"/>
+                            <constraint firstItem="W81-Pf-V5T" firstAttribute="top" secondItem="HFn-ug-UmJ" secondAttribute="bottom" constant="26" id="Dgw-KB-hcz"/>
+                            <constraint firstItem="HFn-ug-UmJ" firstAttribute="leading" secondItem="CDS-Yb-wW0" secondAttribute="leading" constant="7" id="IWD-t3-mXV"/>
+                            <constraint firstItem="CDS-Yb-wW0" firstAttribute="trailing" secondItem="W81-Pf-V5T" secondAttribute="trailing" constant="7" id="Jjw-he-Ttw"/>
+                            <constraint firstItem="W81-Pf-V5T" firstAttribute="leading" secondItem="CDS-Yb-wW0" secondAttribute="leading" constant="7" id="Rd4-7p-nxR"/>
+                            <constraint firstItem="8vg-X6-vLs" firstAttribute="top" secondItem="W81-Pf-V5T" secondAttribute="bottom" constant="23" id="ZtL-GP-nnK"/>
+                            <constraint firstItem="8vg-X6-vLs" firstAttribute="leading" secondItem="CDS-Yb-wW0" secondAttribute="leading" id="p7n-oH-iNh"/>
+                            <constraint firstItem="HFn-ug-UmJ" firstAttribute="top" secondItem="CDS-Yb-wW0" secondAttribute="top" constant="12" id="rfN-ep-g2L"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="CDS-Yb-wW0"/>
                     </view>
+                    <connections>
+                        <outlet property="InfoLabel" destination="W81-Pf-V5T" id="aJw-8G-hXk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4CN-Va-vun" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3092" y="1714"/>
+            <point key="canvasLocation" x="-3092" y="1713.5467980295566"/>
         </scene>
         <!--Identy verification View Controller-->
         <scene sceneID="n04-rf-uuc">

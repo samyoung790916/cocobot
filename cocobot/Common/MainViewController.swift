@@ -242,8 +242,6 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
                         
                         if index == 0{
                             self.performSegue(withIdentifier: "PermissionSegue", sender: self)
-                            
-                            
                         }
                     }
                     return
